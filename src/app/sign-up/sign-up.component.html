@@ -1,13 +1,13 @@
 <section>
     <nav>
         <div class="logoContainer">
-            <img src="../../assets/img/Logo.png" alt="logo">
+            <img src="/da-bubble/assets/img/Logo.png" alt="logo">
         </div>
     </nav>
     <div class="mainContainer">
         <form (ngSubmit)="onSubmit()" [formGroup]="myForm" class="card" data-aos="fade-left">
             <div class="formHeadline"> 
-                <img [routerLink]="['/']" src="/assets/img/arrow_back.png" alt="arrow_back">
+                <img [routerLink]="['/']" src="/da-bubble/assets/img/arrow_back.png" alt="arrow_back">
                 <h1>Konto erstellen</h1>
             </div>
             <span>Mit deinem Namen und deiner E-Mail-Adresse hast du dein neues DABubble-Konto</span>
@@ -15,10 +15,10 @@
                 <input
                 type="name"
                 formControlName="name"
-                (focus)="userIcon.src = '/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png'"
-                (blur)="userIcon.src = '/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png'"
+                (focus)="userIcon.src = '/da-bubble/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png'"
+                (blur)="userIcon.src = '/da-bubble/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png'"
                 placeholder="Name und Nachname" required>
-                <img #userIcon src="/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                <img #userIcon src="/da-bubble/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 <p
                 *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"
                 class="errorStyle">
@@ -29,10 +29,10 @@
                 <input
                 type="email"
                 formControlName="mail"
-                (focus)="img.src = '../../assets/img/mail-focus.png'"
-                (blur)="img.src = '../../assets/img/mail-Icon.png'"
+                (focus)="img.src = '/da-bubble/assets/img/mail-focus.png'"
+                (blur)="img.src = '/da-bubble/assets/img/mail-Icon.png'"
                 placeholder="beispielname&#64;email.com" required>
-                <img #img src="../../assets/img/mail-Icon.png" alt="">
+                <img #img src="/da-bubble/assets/img/mail-Icon.png" alt="">
                 <p
                 *ngIf="myForm.get('mail')?.invalid && myForm.get('mail')?.touched"
                 class="errorStyle">
@@ -43,10 +43,10 @@
                 <input
                 type="password"
                 formControlName="pw"
-                (focus)="lockImg.src = '../../assets/img/lock-focus.png'"
-                (blur)="lockImg.src = '../../assets/img/lock-icon.png'"
+                (focus)="lockImg.src = '/da-bubble/assets/img/lock-focus.png'"
+                (blur)="lockImg.src = '/da-bubble/assets/img/lock-icon.png'"
                 placeholder="Passwort" required>
-                <img #lockImg src="../../assets/img/lock-icon.png" alt="">
+                <img #lockImg src="/da-bubble/assets/img/lock-icon.png" alt="">
                 <p
                 *ngIf="myForm.get('pw')?.invalid && myForm.get('pw')?.touched"
                 class="errorStyle">

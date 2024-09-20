@@ -1,17 +1,17 @@
 <section>
     <nav>
         <div class="logoContainer">
-            <img src="../../assets/img/Logo.png" alt="logo">
+            <img src="/da-bubble/assets/img/Logo.png" alt="logo">
         </div>
     </nav>
     <div class="mainContainer">
         <div class="card" data-aos="fade-left">
             <div class="formHeadline"> 
-                <img [routerLink]="['/signUp']" src="/assets/img/arrow_back.png" alt="arrow_back">
+                <img [routerLink]="['/signUp']" src="/da-bubble/assets/img/arrow_back.png" alt="arrow_back">
                 <h1>Wähle deinen Avatar</h1>
             </div>
             <div
-                [ngStyle]="{'background-image': selectedAvatar ? 'url(' + selectedAvatar + ')' : 'url(/assets/img/unUsedDefault.png)'}"
+                [ngStyle]="{'background-image': selectedAvatar ? 'url(' + selectedAvatar + ')' : 'url(/da-bubble/assets/img/unUsedDefault.png)'}"
                 (click)="triggerFileUpload(fileInput)"
                 class="avatarImageCt">
             </div>

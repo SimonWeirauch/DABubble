@@ -21,7 +21,7 @@ export class DialogShowUserProfilComponent implements OnInit {
   us = inject(UserService);
   authService = inject(AuthService);
   editMode: boolean = false;
-  selectedAvatar: string = '/assets/img/unUsedDefault.png';
+  selectedAvatar: string = '/da-bubble/assets/img/unUsedDefault.png';
   newData: User;
   myForm: FormGroup;
   showPasswordInput: boolean = false;
@@ -182,7 +182,7 @@ export class DialogShowUserProfilComponent implements OnInit {
     this.editMode = true;
     this.showPasswordInput = false;
     this.newData = this.userData;
-    this.selectedAvatar = this.userData.avatarUrl ?? '/assets/img/unUsedDefault.png';
+    this.selectedAvatar = this.userData.avatarUrl ?? '/da-bubble/assets/img/unUsedDefault.png';
     this.myForm.patchValue({
       name: this.userData.name,
       email: this.userData.email

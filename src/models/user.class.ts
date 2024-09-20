@@ -12,7 +12,7 @@ export class User {
         this.email = obj ? obj.email : '';
         this.name = obj ? obj.name : '';
         this.status = obj ? obj.status : 'offline';
-        this.avatarUrl = obj ? obj.avatarUrl : '/assets/img/unUsedDefault.png';
+        this.avatarUrl = obj ? obj.avatarUrl : '/da-bubble/assets/img/unUsedDefault.png';
         this.userId = obj ? obj.userId : '';
         this.logIn = obj && obj.logIn || 'https://bubble.ishakates.com/';
         this.usedLastTwoEmojis = obj && obj.usedLastTwoEmojis ? obj.usedLastTwoEmojis : ['✅', '🙌'];

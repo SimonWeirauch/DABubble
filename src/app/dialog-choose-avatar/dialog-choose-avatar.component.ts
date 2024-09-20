@@ -18,12 +18,12 @@ import { AuthService } from '../shared-services/auth.service';
 export class DialogChooseAvatarComponent {
   http = inject(HttpClient);
   images: string[] = [
-    '/assets/img/defaultAvatars/defaultFemale1.png',
-    '/assets/img/defaultAvatars/defaultMale1.png',
-    '/assets/img/defaultAvatars/defaultMale4.png',
-    '/assets/img/defaultAvatars/defaultMale2.png',
-    '/assets/img/defaultAvatars/defaultFemale2.png',
-    '/assets/img/defaultAvatars/defaultMale3.png'
+    '/da-bubble/assets/img/defaultAvatars/defaultFemale1.png',
+    '/da-bubble/assets/img/defaultAvatars/defaultMale1.png',
+    '/da-bubble/assets/img/defaultAvatars/defaultMale4.png',
+    '/da-bubble/assets/img/defaultAvatars/defaultMale2.png',
+    '/da-bubble/assets/img/defaultAvatars/defaultFemale2.png',
+    '/da-bubble/assets/img/defaultAvatars/defaultMale3.png'
   ];
   selectedAvatar: string = "";
   userCreated: boolean = false;

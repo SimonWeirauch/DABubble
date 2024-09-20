@@ -6,7 +6,7 @@
         <header>
             <div class="overlay" *ngIf="dropdownOpen" (click)="toggleDropdown()"></div>
             <div class="logo">
-                <img src="/assets/img/Logo.png" alt="Logo">
+                <img src="/da-bubble/assets/img/Logo.png" alt="Logo">
             </div>
             <div class="searchBar">
                 <input type="text" (input)="onSearch($event)" placeholder="Suche...">
@@ -19,7 +19,7 @@
                     'offline': us.loggedUser.status !== 'online'
                     }"></div>
                 </div>
-                <img [src]="hovered ? '/assets/img/expand_more.png' : '/assets/img/keyboard_arrow_down.png'" alt="dropdown">
+                <img [src]="hovered ? '/da-bubble/assets/img/expand_more.png' : '/da-bubble/assets/img/keyboard_arrow_down.png'" alt="dropdown">
                 
                 <!-- Dropdown-Menü -->
                 <div class="dropdown" *ngIf="dropdownOpen">
@@ -37,7 +37,7 @@
             <header>
                 <div class="overlay" *ngIf="dropdownOpen" (click)="toggleDropdown()"></div>
                 <div>
-                    <img src="/assets/img/Logo.png" alt="Logo">
+                    <img src="/da-bubble/assets/img/Logo.png" alt="Logo">
                 </div>
                 <!-- <img (click)="toggleDropdown()" src="{{us.activeUserObject.avatarUrl}}" alt="Logo">             -->
                 <div (click)="toggleDropdown()" class="userAvatarCT" [ngStyle]="{'background-image': 'url(' + us.activeUserObject.avatarUrl + ')'}">
@@ -95,7 +95,7 @@
                         </g>
                     </svg>
                     <div>
-                        <img src="../../assets/channel/workspace_logo.png" alt="Logo">
+                        <img src="/da-bubble/assets/channel/workspace_logo.png" alt="Logo">
                         <span>Devspace</span>
                     </div>
                 </div>

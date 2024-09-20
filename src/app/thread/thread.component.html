@@ -18,7 +18,7 @@
                 }
                 }
             </div>
-            <img (click)="closeThread()" src="../../assets/img/close.png" alt="">
+            <img (click)="closeThread()" src="/da-bubble/assets/img/close.png" alt="">
         </div>
 
         <div class="chat-area">
@@ -54,7 +54,7 @@
                         </a>
                         } @else {
                         <a href="{{mainChannelMessage.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -136,11 +136,11 @@
                         class="reactionbar-emoji-div">{{user.usedLastTwoEmojis[1]}}</div>
                     }
                     @else {
-                    <img src="../../assets/img/reactionbar_add_reaction.png" alt="">
-                    <img src="../../assets/img/reactionbar_answer.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_answer.png" alt="">
                     }
 
-                    <img src="../../assets/img/reactionbar_add_reaction.png"
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png"
                         (click)="mAndC.toggleEmoticonsReactionbar(message.messageId)" alt="">
                     @if (mAndC.selectedMessageId === message.messageId) {
                     <div class="emoticon-reaction-div">
@@ -149,7 +149,7 @@
                             title="Choose your emoji"></emoji-mart>
                     </div>
                     }
-                    <img src="../../assets/img/reactionbar_edit.png" (click)="edit.editMessage(message, 'thread')"
+                    <img src="/da-bubble/assets/img/reactionbar_edit.png" (click)="edit.editMessage(message, 'thread')"
                         alt="">
                 </div>
 
@@ -190,7 +190,7 @@
                         </a>
                         } @else {
                         <a href="{{message.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -232,10 +232,10 @@
                         class="reactionbar-emoji-div">{{user.usedLastTwoEmojis[1]}}</div>
                     }
                     @else {
-                    <img src="../../assets/img/reactionbar_add_reaction.png" alt="">
-                    <img src="../../assets/img/reactionbar_answer.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_answer.png" alt="">
                     }
-                    <img src="../../assets/img/reactionbar_add_reaction.png"
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png"
                         (click)="mAndC.toggleEmoticonsReactionbar(message.messageId)" alt="">
                     @if (mAndC.selectedMessageId === message.messageId) {
                     <div class="emoticon-reaction-div">
@@ -276,7 +276,7 @@
                         </a>
                         } @else {
                         <a href="{{message.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -387,7 +387,7 @@
                     @if (fileUpload.isImage(fileUpload.downloadURLThread)) {
                     <img class="upload-preview" src="{{fileUpload.downloadURLThread}}" alt="">
                     } @else {
-                    <img class="upload-preview" src="../../assets/img/PDF_icon.svg.png" alt="">
+                    <img class="upload-preview" src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                     }
 
                     <button class="upload-preview-BTN" (click)="fileUpload.deletePreview('thread')">Delete</button>
@@ -397,7 +397,7 @@
                 <div class="message-actions">
                     <div class="action-left">
                         <button class="action-button" (click)="triggerFileInput()"> <img
-                                src="../../assets/img/add_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/add_icon.png" alt=""></button>
                         @for (member of channelMemberList; track $index) {
                         @if(user.userId== member.userId){
                         <input #fileInput type="file" style="display: none;"
@@ -406,14 +406,14 @@
                         }
                         <div class="line"></div>
                         <button (click)="mAndC.toggleEmoticons('thread')" class="action-button"><img
-                                src="../../assets/img/emoticon_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/emoticon_icon.png" alt=""></button>
                         <button (click)="mAndC.toggleMention('thread')" class="action-button"><img
-                                src="../../assets/img/mention_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/mention_icon.png" alt=""></button>
                     </div>
 
                     <div class="action-right">
                         <button (click)="saveNewChannelThreadMessage()" class="action-button"> <img
-                                src="../../assets/img/send_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/send_icon.png" alt=""></button>
                     </div>
                 </div>
                 }
@@ -432,7 +432,7 @@
                 <span class="header">Thread</span>
                 <span class="channel"> {{currentThread.threadNameRecipient}}</span>
             </div>
-            <img (click)="closeThread()" src="../../assets/img/close.png" alt="">
+            <img (click)="closeThread()" src="/da-bubble/assets/img/close.png" alt="">
         </div>
 
         <div class="chat-area">
@@ -468,7 +468,7 @@
                         </a>
                         } @else {
                         <a href="{{mainMessage.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -547,11 +547,11 @@
                         class="reactionbar-emoji-div">{{user.usedLastTwoEmojis[1]}}</div>
                     }
                     @else {
-                    <img src="../../assets/img/reactionbar_add_reaction.png" alt="">
-                    <img src="../../assets/img/reactionbar_answer.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_answer.png" alt="">
                     }
 
-                    <img src="../../assets/img/reactionbar_add_reaction.png"
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png"
                         (click)="mAndC.toggleEmoticonsReactionbar(message.messageId)" alt="">
                     @if (mAndC.selectedMessageId === message.messageId) {
                     <div class="emoticon-reaction-div">
@@ -560,7 +560,7 @@
                             title="Choose your emoji"></emoji-mart>
                     </div>
                     }
-                    <img src="../../assets/img/reactionbar_edit.png" (click)="edit.editMessage(message, 'thread')"
+                    <img src="/da-bubble/assets/img/reactionbar_edit.png" (click)="edit.editMessage(message, 'thread')"
                         alt="">
                 </div>
 
@@ -601,7 +601,7 @@
                         </a>
                         } @else {
                         <a href="{{message.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -642,10 +642,10 @@
                         class="reactionbar-emoji-div">{{user.usedLastTwoEmojis[1]}}</div>
                     }
                     @else {
-                    <img src="../../assets/img/reactionbar_add_reaction.png" alt="">
-                    <img src="../../assets/img/reactionbar_answer.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png" alt="">
+                    <img src="/da-bubble/assets/img/reactionbar_answer.png" alt="">
                     }
-                    <img src="../../assets/img/reactionbar_add_reaction.png"
+                    <img src="/da-bubble/assets/img/reactionbar_add_reaction.png"
                         (click)="mAndC.toggleEmoticonsReactionbar(message.messageId)" alt="">
                     @if (mAndC.selectedMessageId === message.messageId) {
                     <div class="emoticon-reaction-div">
@@ -686,7 +686,7 @@
                         </a>
                         } @else {
                         <a href="{{message.fileUrl}}" target="_blank">
-                            <img src="../../assets/img/PDF_icon.svg.png" alt="">
+                            <img src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                             <p>PDF öffnen</p>
                         </a>
                         }
@@ -800,7 +800,7 @@
                     @if (fileUpload.isImage(fileUpload.downloadURLThread)) {
                     <img class="upload-preview" src="{{fileUpload.downloadURLThread}}" alt="">
                     } @else {
-                    <img class="upload-preview" src="../../assets/img/PDF_icon.svg.png" alt="">
+                    <img class="upload-preview" src="/da-bubble/assets/img/PDF_icon.svg.png" alt="">
                     }
 
                     <button class="upload-preview-BTN" (click)="fileUpload.deletePreview('thread')">Delete</button>
@@ -810,19 +810,19 @@
                 <div class="message-actions">
                     <div class="action-left">
                         <button class="action-button" (click)="triggerFileInput()"> <img
-                                src="../../assets/img/add_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/add_icon.png" alt=""></button>
                         <input #fileInput type="file" style="display: none;"
                             (change)="fileUpload.onFileSelected($event, sendingUser, currentThread, 'thread')">
                         <div class="line"></div>
                         <button (click)="mAndC.toggleEmoticons('thread')" class="action-button"><img
-                                src="../../assets/img/emoticon_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/emoticon_icon.png" alt=""></button>
                         <button (click)="mAndC.toggleMention('thread')" class="action-button"><img
-                                src="../../assets/img/mention_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/mention_icon.png" alt=""></button>
                     </div>
 
                     <div class="action-right">
                         <button (click)="saveNewMessage()" class="action-button"> <img
-                                src="../../assets/img/send_icon.png" alt=""></button>
+                                src="/da-bubble/assets/img/send_icon.png" alt=""></button>
                     </div>
                 </div>
 

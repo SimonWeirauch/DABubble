@@ -2,7 +2,7 @@
     <!-- Overlay Section -->
     <div [ngClass]="{'introOverlay': intro, 'overlay': !intro}">
         <div class="introLogoCt">
-            <img [ngClass]="{'toLeft': switchlogo}" src="../../assets/img/Logoo.png" alt="">
+            <img [ngClass]="{'toLeft': switchlogo}" src="/da-bubble/assets/img/Logoo.png" alt="">
             <span [ngClass]="{'visible': textVisible}">DABubble</span>
         </div>
     </div>
@@ -13,7 +13,7 @@
             <div class="logoMainContainer">
                 <img class="logoContainer"
                 [ngClass]="{'logoIntroAnimation': navLogoAnimation, 'logoContainer': !navLogoAnimation}"
-                src="../../assets/img/Logo.png" alt="logo">
+                src="/da-bubble/assets/img/Logo.png" alt="logo">
                 <!-- <span>DABubble</span> -->
             </div>
             <div class="signUpLink">
@@ -32,11 +32,11 @@
                     <input
                     type="email"
                     formControlName="mail"
-                    (focus)="img.src = 'assets/img/mail-focus.png'"
-                    (blur)="img.src = 'assets/img/mail-Icon.png'"
+                    (focus)="img.src = '/da-bubble/assets/img/mail-focus.png'"
+                    (blur)="img.src = '/da-bubble/assets/img/mail-Icon.png'"
                     [ngClass]="{'redBorder': checkLoginData, 'defaultBorder': !borderAnimation}"
                     placeholder="beispielname&#64;email.com" required>
-                    <img #img src="assets/img/mail-Icon.png" alt="">
+                    <img #img src="/da-bubble/assets/img/mail-Icon.png" alt="">
                     <p
                     *ngIf="myForm.get('mail')?.invalid && myForm.get('mail')?.touched || invalidMail"
                     [ngClass]="{'errorStyle': invalidMail || myForm.get('mail')?.invalid, 'opacityAnimation': falseLoginAnimation}"
@@ -49,11 +49,11 @@
                     <input
                     type="password"
                     formControlName="pw"
-                    (focus)="lockImg.src = 'assets/img/lock-focus.png'"
-                    (blur)="lockImg.src = 'assets/img/lock-icon.png'"
+                    (focus)="lockImg.src = '/da-bubble/assets/img/lock-focus.png'"
+                    (blur)="lockImg.src = '/da-bubble/assets/img/lock-icon.png'"
                     [ngClass]="{'redBorder': checkLoginData, 'defaultBorder': !borderAnimation}"
                     placeholder="Passwort" required>
-                    <img #lockImg src="assets/img/lock-icon.png" alt="">
+                    <img #lockImg src="/da-bubble/assets/img/lock-icon.png" alt="">
                     <p 
                         *ngIf="(myForm.get('pw')?.invalid && myForm.get('pw')?.touched) || invalidPassword" 
                         [ngClass]="{'errorStyle': invalidPassword || myForm.get('pw')?.invalid, 'opacityAnimation': falseLoginAnimation}"
@@ -76,7 +76,7 @@
                     [class.pressed]="isPressed"
                     class="googleBtn"
                     type="button">
-                    <img src="assets/img/Google.png" alt="googleIcon">
+                    <img src="/da-bubble/assets/img/Google.png" alt="googleIcon">
                     <span>
                         Anmelden mit Google
                     </span>

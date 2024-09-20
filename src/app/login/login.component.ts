@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     email: 'guest@mail.com',
     name: 'John Doe',
     status: 'offline',
-    avatarUrl: '../../assets/img/unUsedDefault.png',
+    avatarUrl: '/da-bubble/assets/img/unUsedDefault.png',
     userId: '',
     logIn: 'https://bubble.ishakates.com/',
     usedLastTwoEmojis: ['✅', '🙌'],
