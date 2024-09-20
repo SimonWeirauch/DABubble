@@ -1,0 +1,63 @@
+<section>
+    
+    <div class="headline">
+        <span>Profil</span>
+        <div class="closeSvgBg" >
+            <!--close svg-->
+            <svg (click)="dialogRef.close()" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_54572_9033" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+                <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_54572_9033)">
+                <path d="M20 21.4L15.1 26.3C14.9167 26.4833 14.6834 26.575 14.4 26.575C14.1167 26.575 13.8834 26.4833 13.7 26.3C13.5167 26.1167 13.425 25.8833 13.425 25.6C13.425 25.3167 13.5167 25.0833 13.7 24.9L18.6 20L13.7 15.1C13.5167 14.9167 13.425 14.6833 13.425 14.4C13.425 14.1167 13.5167 13.8833 13.7 13.7C13.8834 13.5167 14.1167 13.425 14.4 13.425C14.6834 13.425 14.9167 13.5167 15.1 13.7L20 18.6L24.9 13.7C25.0834 13.5167 25.3167 13.425 25.6 13.425C25.8834 13.425 26.1167 13.5167 26.3 13.7C26.4834 13.8833 26.575 14.1167 26.575 14.4C26.575 14.6833 26.4834 14.9167 26.3 15.1L21.4 20L26.3 24.9C26.4834 25.0833 26.575 25.3167 26.575 25.6C26.575 25.8833 26.4834 26.1167 26.3 26.3C26.1167 26.4833 25.8834 26.575 25.6 26.575C25.3167 26.575 25.0834 26.4833 24.9 26.3L20 21.4Z" fill="black"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="image">
+        <img src="{{shownUser.avatarUrl}}">
+    </div>
+
+    <div class="userNameContainer"> 
+        <span>{{shownUser.name}}</span>
+        <div>
+            <!--Status Symbol-->
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+            </svg>
+            <span>{{shownUser.status}}</span>
+        </div>
+    </div>
+
+    <div class="userMailContainer"> 
+        <div>
+            <!--Mail Symbol-->
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_56549_3731" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                <rect width="30" height="30" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_56549_3731)">
+                <path d="M5 25C4.3125 25 3.72417 24.7554 3.235 24.2663C2.745 23.7763 2.5 23.1875 2.5 22.5V7.5C2.5 6.8125 2.745 6.22417 3.235 5.735C3.72417 5.245 4.3125 5 5 5H25C25.6875 5 26.2763 5.245 26.7663 5.735C27.2554 6.22417 27.5 6.8125 27.5 7.5V22.5C27.5 23.1875 27.2554 23.7763 26.7663 24.2663C26.2763 24.7554 25.6875 25 25 25H5ZM25 10L15.6562 15.8438C15.5521 15.9062 15.4425 15.9529 15.3275 15.9837C15.2133 16.0154 15.1042 16.0312 15 16.0312C14.8958 16.0312 14.7867 16.0154 14.6725 15.9837C14.5575 15.9529 14.4479 15.9062 14.3438 15.8438L5 10V22.5H25V10ZM15 13.75L25 7.5H5L15 13.75ZM5 10.3125V8.46875V8.5V8.48375V10.3125Z" fill="black"/>
+                </g>
+            </svg>
+            <span>E-Mail-Adresse</span>
+        </div>
+        <span>{{shownUser.email}}</span>
+    </div>
+
+    <div class="sendMessage">
+        <button (click)="openConversation(shownUser)">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_56549_3738" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+                <rect y="0.5" width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_56549_3738)">
+                <path d="M20.3 20.8L18 18.5H4C3.45 18.5 2.97933 18.3043 2.588 17.913C2.196 17.521 2 17.05 2 16.5V4.5C2 3.95 2.196 3.479 2.588 3.087C2.97933 2.69567 3.45 2.5 4 2.5H20C20.55 2.5 21.021 2.69567 21.413 3.087C21.8043 3.479 22 3.95 22 4.5V20.075C22 20.525 21.796 20.8373 21.388 21.012C20.9793 21.1873 20.6167 21.1167 20.3 20.8ZM4 4.5V16.5H18.825L20 17.675V4.5H4Z" fill="white"/>
+                </g>
+            </svg>
+            <span>Nachricht</span>
+        </button>
+    </div>
+
+</section>

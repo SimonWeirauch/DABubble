@@ -1,0 +1,215 @@
+section {
+      height: 331px;
+      padding: 40px;
+      border-radius: 30px 0px 30px 30px;
+      opacity: 0px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: fixed;
+      top: 220px;
+      right: 28.5vw;
+      width: clamp(335px, 23vw, 335px);
+ 
+    }
+
+    .headline {
+        max-width: 335px;
+        width: 100%;
+        height: 40px;
+        gap: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0px;
+        .closeSvgBg{
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            opacity: 0px;
+            svg:hover {
+                path {
+                    fill: #535AF1;
+                }
+                background-color:#ECEEFE;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        }
+        >span{
+            display: flex;
+            width: 100%;
+            height: 33px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32.74px;
+            text-align: left;
+        }
+    }
+    
+    .userlistContainer{
+        max-width: 215px;
+        width: 100%;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+        padding: 0px 40px 40px 5px;
+        gap: 20px;
+        border-radius: 0px 30px 30px 30px;
+        opacity: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+            .userList {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: fit-content;
+                padding: 0px 15px 0px 15px;
+                >div {
+                    display: flex;
+                    align-items: center;
+       
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                        gap: 0px;
+                        border-radius: 30px;
+                        opacity: 0px;
+                    }
+                   
+                    >svg{
+                        display: flex;
+                        position: relative;
+                        right: 15px;
+                        top: 18px;
+                    }
+            
+                    span {
+                        display: flex;
+                        position: relative;
+                        width: max-content;
+                        height: 25px;
+                        gap: 0px;
+                        opacity: 0px;
+                        font-family: Nunito;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24.55px;
+                        text-align: left;
+                    }
+                }
+            }
+        
+            .userList:hover {
+                background-color: #ECEEFE;
+                border-radius: 20px;
+            }
+    }
+
+    .userlistContainer::-webkit-scrollbar {
+        display: none;
+   }
+       
+    .addMember{
+        display: flex;
+        align-items: center;
+        max-width: 282px;
+        width: 100%;
+        height: 56px;
+        padding: 12px 29px 12px 29px;
+        gap: 15px;
+        border-radius: 100px 0px 0px 0px;
+        opacity: 0px;
+        >div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            span {
+                display: flex;
+                position: relative;
+                max-width: 200px;
+                width: 100%;
+                height: 25px;
+                padding: 10px 20px 10px 0px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+            }
+        }
+    }
+
+    .addMember :hover{
+        background-color: #ECEEFE;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1650px) {
+        section {
+            right: 36.5vw;
+          }
+    }
+
+    @media (max-width: 1300px) {
+        section {
+            left: 400px;
+        }
+    }
+
+
+    @media (max-width: 1200px) {
+    section {
+        right: 7.5vw;
+        left: unset;
+      }
+    }
+
+
+
+    @media (max-width: 900px) {
+        section {
+            left: 400px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        section {
+            width: calc(100vw - 18vw);
+            height: 360px;
+            padding: 20px 16px 20px 16px;
+            border-radius: 20px 0px 20px 20px;
+            position: relative !important;
+            top: -90px;
+            left: -10%;
+            gap: 20px;
+        }
+
+        .userlistContainer{
+            width: 200px;
+            padding: 0px;
+        }
+
+
+        .addMember{
+            display: flex;
+            align-items: center;
+            width: 282px;
+            height: 56px;
+            padding: 12px 0px 12px 0px;
+            gap: 15px;
+            border-radius: 100px 0px 0px 0px;
+            opacity: 0px;
+        }
+
+
+    }

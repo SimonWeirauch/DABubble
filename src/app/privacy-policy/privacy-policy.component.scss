@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 100px 0 100px;
+    .logoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 60px;
+        }
+    }
+}
+
+.cardContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    width: 600px;
+    height: 700px;
+    border-radius: 4%;
+    padding: 40px;
+    gap: 120px;
+    position: relative;
+    overflow-y: scroll;
+
+    * {
+        font-family: "Nunito";
+    }
+
+    h1, h2 {
+        color: #444DF2;
+        font-size: 46px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 55px;
+        margin: 20px 0;
+    }
+    h3 {
+        color: #444DF2;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+
+.formHeadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+
+    img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+.policy {
+    position: absolute;
+    top: 120px;
+    padding: 40px;
+}
+
+
+
+//Responsive
+@media only screen and (max-width: 850px) {
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    nav {
+        padding: 20px 100px 20px 100px;
+    }
+
+    .card {
+        width: 400px;
+        border-radius: 30px;
+    }
+
+    .card .formHeadline h1 {
+        font-size: 32px;
+        line-height: 38px;
+        
+    }
+
+    .card .formHeadline img {
+        top: 18px;
+    }
+
+    .card h1, .card h2 {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 0px 0;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    nav {
+        padding: 20px 0px 20px 0px;
+    }
+
+    .card {
+        width: 320px;
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    .policy {
+        padding: 20px;
+    }
+}

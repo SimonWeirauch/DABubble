@@ -1,0 +1,495 @@
+section {
+    z-index: 99;
+    >form {
+        display: flex;
+        flex-direction: column;
+        width: 420px;
+        height: 625px;
+        padding: 40px;
+        gap: 45px;
+        border-radius: 30px;
+        opacity: 0px;
+        background: #FFFFFF;
+    }
+}
+
+    .headline {
+        width: 100%;
+        height: 40px;
+        gap: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0px;
+        .closeSvgBg{
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            opacity: 0px;
+            svg:hover {
+                path {
+                    fill: #535AF1;
+                }
+                background-color:#ECEEFE;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        }
+
+        >span{
+            display: flex;
+            width: 400px;
+            height: 33px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            text-align: left;
+        }
+    }
+    
+    .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 420px;
+            >img {
+                display: flex;
+                width: 200px;
+                height: 200px;
+                gap: 20px;
+                border-radius: 500px;
+                opacity: 0px;
+                object-fit: cover;
+            }
+    }
+
+        
+    .userNameContainer {
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            height: 86px;
+            gap: 15px;
+            opacity: 0px;
+            span {
+                display: flex;
+                position: relative;
+                width: 181px;
+                height: 44px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 43.65px;
+                text-align: left;
+            }
+    }
+
+
+    .userNameCt {
+        display: flex;
+        flex-direction: column;
+        width: 420px;
+        height: 86px;
+        gap: 6px;
+        opacity: 0px;
+        div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            span {
+                display: flex;
+                position: relative;
+                height: 44px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 43px;
+                text-align: left;
+            }
+        }
+        input {
+            height: 55px;
+            padding: 15px 20px 15px 20px;
+            gap: 10px;
+            border-radius: 30px;
+            border: 1px solid #ADB0D9;
+            font-family: "Nunito";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;
+            color: #686868;
+            &:hover {
+                border: 1px solid #797EF3;
+            }
+            &:focus {
+                border: 1px solid #444DF2;
+                outline: none;
+            }
+        }
+        p {
+            color: #ED1E79;
+            font-family: "Nunito";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.1px;
+            text-align: left;
+        }
+    }
+
+
+    .userHeadCt {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        span {
+            display: flex;
+            position: relative;
+            width: auto;
+            height: 44px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 43.65px;
+            text-align: left;
+        }
+        p {
+            cursor: pointer;
+            color: #797EF3;
+        }
+    }
+
+
+    .statusCt {
+        display: flex;
+        align-items: center;
+        width: 78px;
+        height: 27px;
+        gap: 15px;
+        opacity: 0px;
+        
+        span {
+            display: flex;
+            position: relative;
+            width: fit-content;
+            width: 47px;
+            height: 27px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 27.28px;
+            text-align: left;
+        }
+    }
+
+
+    .showErrorByWrongPassword {
+        color: #ED1E79;
+        font-family: "Nunito";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.1px;
+        text-align: left;
+    }
+
+
+    .userMailContainer {
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            height: 70px;
+            gap: 10px;
+            opacity: 0px;
+            >div {
+                display: flex;
+                align-items: center;
+                width: 195px;
+                height: 30px;
+                gap: 20px;
+                opacity: 0px;
+
+                span {
+                    display: flex;
+                    width: 195px;
+                    height: 27px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 27.28px;
+                    text-align: left;
+                    color: black !important;
+                    padding: 0px !important;
+                }
+            }
+            input {
+                height: 55px;
+                padding: 15px 20px 15px 20px;
+                gap: 10px;
+                border-radius: 30px;
+                border: 1px solid #ADB0D9;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+                color: #686868;
+                &:hover {
+                    border: 1px solid #797EF3
+                }
+                &:focus {
+                    border: 1px solid #444DF2;
+                    outline: none;
+                }
+            }
+            p {
+                color: #ED1E79;
+                font-family: "Nunito";
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 10px;
+                text-align: left;
+                margin: 0;
+            }
+            span {
+                display: flex;
+                width: 260px;
+                height: 25px;
+                gap: 10px;
+                opacity: 0px;
+                padding: 0px 10px 0px 50px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+                color: #1381FF;
+            }
+    }
+
+
+    .passwordField {
+        height: 55px;
+        padding: 15px 20px 15px 20px;
+        gap: 10px;
+        border-radius: 30px;
+        border: 1px solid #ADB0D9;
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.55px;
+        text-align: left;
+        color: #686868;
+        &:hover {
+            border: 1px solid #797EF3
+        }
+        &:focus {
+            border: 1px solid #444DF2;
+            outline: none;
+        }
+    }
+
+
+    .sendMessage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        gap: 15px;
+        opacity: 0px;
+        >button {
+            display: flex;
+            align-items: center;
+            width: 164px;
+            height: 49px;
+            padding: 12px 25px 12px 25px;
+            gap: 10px;
+            border-radius: 50px;
+            opacity: 0px;
+            border: transparent !important;
+            background-color: #444DF2;
+            
+            span {
+                display: flex;
+                width: 80px;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: "Nunito";
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;  
+                color: white;              
+            }
+        }
+
+        >button:hover{
+            cursor: pointer;
+            background-color: #535AF1;
+        }
+    }
+
+
+
+    .btnContainer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+
+    .avatarImageCt {
+        width: 180px;
+        height: 180px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        background-size: cover;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: ease-in-out 125ms;
+        &:hover {
+            border: 8px solid #E6E6E6;
+        }
+    }
+
+
+    #fileInput {
+        display: none;
+    }
+
+
+    @media (max-width: 850px) {
+
+
+        //      <!--  [ngStyle]="showPasswordInput ? {'height': '83vh', 'gap': '38px'} : {'height': '80vh', 'gap': '38px'}" -->
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section > form {
+            width: 96%;
+            height: 83vh;
+        }
+
+        .headline .closeSvgBg {
+            padding: 0px;
+        }
+
+        .userNameContainer {
+            width: 100%;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .userMailContainer {
+            width: 100%;
+        }
+
+        //edit User Template
+        .headline > span {
+            width: 270px;
+        }
+
+        .userNameCt {
+            width: 100%;
+        }
+
+        .userNameCt div span {
+            font-size: 26px;
+        }
+    }
+
+
+    @media only screen and (max-width: 480px) {
+        
+        
+        section > form {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 38px //20px;
+            //overflow-y: scroll;
+        }
+
+
+
+        .userHeadCt span {
+            font-size: 24px;
+        }
+
+        //edit User Template
+        .userNameCt div span {
+            font-size: 20px;
+            line-height: 43px;
+        }
+
+        .btnContainer {
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+    }
+
+
+    @media (max-height: 741px) {
+        section > form {
+            gap: 30px //20px;
+        }
+
+        .headline {
+            position: relative;
+            top: 30px !important;
+            width: 320px;
+        }
+
+        section > form {
+            width: 95%;
+
+        }
+    }
+
+
+    @media (max-height: 670px) {
+        section > form {
+            gap: 25px !important;
+            height: 87vh !important;
+        }
+
+        section > form {
+            width: 95%;
+        }
+
+        .headline {
+            position: relative;
+            top: 55px !important;
+            width: 320px;
+        }
+
+        .image {
+            position: relative;
+            top: 30px;
+        }
+    }

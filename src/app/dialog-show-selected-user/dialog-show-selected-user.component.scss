@@ -1,0 +1,230 @@
+section {
+    height: 331px;
+    width: 335px;
+    padding: 40px;
+    border-radius: 30px;
+    opacity: 0px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .headline {
+      width: 335px;
+      height: 40px;
+      gap: 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0px;
+      .closeSvgBg{
+          width: 40px;
+          height: 40px;
+          padding: 8px;
+          opacity: 0px;
+          svg:hover {
+              path {
+                  fill: #535AF1;
+              }
+              background-color:#ECEEFE;
+              border-radius: 20px;
+              cursor: pointer;
+          }
+      }
+      >span{
+          display: flex;
+          width: 400px;
+          height: 33px;
+          gap: 0px;
+          opacity: 0px;
+          font-family: Nunito;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 32.74px;
+          text-align: left;
+      }
+  }
+  
+  .userlistContainer{
+      height: 211px;
+      display: flex;
+      flex-direction: column;
+      z-index: 99;
+      padding: 0px 40px 40px 5px;
+      gap: 20px;
+      border-radius: 0px 30px 30px 30px;
+      opacity: 0px;
+      overflow: auto;
+      background-color: #FFFFFF;
+          .userList {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              width: 100%;
+              padding: 0px 15px 0px 15px;
+
+                    >div {
+                        display: flex;
+                        align-items: center;
+
+                        width: 100%;
+                        >img{
+                            width: 50px;
+                            height: 50px;
+                            gap: 0px;
+                            border-radius: 30px;
+                            opacity: 0px;
+                        }
+                       
+                        >svg{
+                            display: flex;
+                            position: relative;
+                            right: 15px;
+                            top: 18px;
+                        }
+                
+                        span {
+                            display: flex;
+                            position: relative;
+                            width: fit-content;
+                            height: 25px;
+                            gap: 0px;
+                            opacity: 0px;
+                            font-family: Nunito;
+                            font-size: 18px;
+                            font-weight: 400;
+                            line-height: 24.55px;
+                            text-align: left;
+                        }
+
+                    }
+
+                    .close {
+                        display: flex;
+                        position: relative;
+                        top: unset !important;
+                        right: unset !important;
+                    }
+              
+          }
+      
+          .userList:hover {
+              background-color: #ECEEFE;
+              border-radius: 20px;
+          }
+  }
+
+  .userlistContainer::-webkit-scrollbar {
+      display: none;
+ }
+
+
+ @media (max-width: 850px) {
+    ::ng-deep .cdk-overlay-container{
+        
+        .cdk-global-overlay-wrapper {
+            justify-content: flex-start !important;
+        }
+    }
+    
+    
+    section {
+        height: 50vh;
+        width: calc(100vw - 20px);
+        padding: 40px 10px 40px 10px;
+        border-radius: 30px;
+
+        >svg {
+            width: 100%;
+        }
+    }
+
+
+    .headline {
+        justify-content: space-around;
+        width: 100%;
+        >span{
+            width: fit-content;
+            height: 33px;
+            font-family: Nunito;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 27.28px;
+            text-align: left;  
+        }
+    }
+
+
+    .userlistContainer{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+        padding: 0px 0px 40px 0px;
+        gap: 20px;
+        border-radius: 0px 30px 30px 30px;
+        opacity: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+            
+            .userList {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: 90%;
+                padding: 0px 0px 0px 20px;
+              
+
+                    >div {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+
+                        >img{
+                            width: 50px;
+                            height: 50px;
+                            gap: 0px;
+                            border-radius: 30px;
+                            opacity: 0px;
+                        }
+                       
+                        >svg{
+                            display: flex;
+                            position: relative;
+                            right: 15px;
+                            top: 18px;
+                        }
+
+                        span {
+                            display: flex;
+                            position: relative;
+                            width: fit-content;
+                            height: 25px;
+                            gap: 0px;
+                            opacity: 0px;
+                            font-family: Nunito;
+                            font-size: 18px;
+                            font-weight: 400;
+                            line-height: 24.55px;
+                            text-align: left;
+                        }
+                    }
+
+
+                    .close {
+                        display: flex;
+                        position: relative;
+                        top: unset !important;
+                        right: unset !important;
+                    }
+            }
+        
+            .userList:hover {
+                background-color: #ECEEFE;
+                border-radius: 20px;
+            }
+    }
+
+ }

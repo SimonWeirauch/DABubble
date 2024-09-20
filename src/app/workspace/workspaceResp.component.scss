@@ -1,0 +1,303 @@
+@mixin nunito20{
+    font-family: Nunito;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27.28px;
+    text-align: left;  
+}
+
+@mixin nunito17{
+    font-family: Nunito;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23.19px;
+    text-align: left;
+}
+
+@mixin nunito17Placeholder{
+    font-family: Nunito;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+}
+
+
+
+
+
+//Baseline
+@media (max-width: 850px) {
+    section {
+        width: 100vw;
+        height: 100vh;
+        padding: 0px 0px 0px 0px;
+        border-radius: 0px;
+        min-width: 270px;
+        max-width: 100%;
+        
+    }
+
+    .workspaceHead{
+        padding: 16px 0px 0px 0px;
+    }
+
+    .userlistContainer{
+        width: 65%;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        z-index: 98;
+        padding: 40px;
+        gap: 20px;
+        border-radius: 0px 30px 30px 30px;
+        opacity: 0px;
+        border: 1px solid #535AF1;
+        overflow: auto;
+        background-color: #FFFFFF;
+            .userList {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: fit-content;
+                padding: 0px;
+                
+                .channelContainer {
+                    display: flex;
+    
+                    >p {
+                        margin: 0 10px 0 0;
+                    }
+                }
+                
+                >div {
+                    display: flex;
+                    align-items: center;
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                        gap: 0px;
+                        border-radius: 30px;
+                        opacity: 0px;
+                        object-fit: cover;
+                    }
+                   
+                    >svg{
+                        display: flex;
+                        position: relative;
+                        right: 15px;
+                        top: 18px;
+                    }
+            
+                    span {
+                        display: flex;
+                        position: relative;
+                        width: fit-content;
+                        height: 25px;
+                        gap: 0px;
+                        opacity: 0px;
+                        font-family: Nunito;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24.55px;
+                        text-align: left;
+                    }
+                }
+            }
+        
+            .userList:hover {
+                background-color: #ECEEFE;
+                border-radius: 20px;
+            }
+       }
+       
+       .userlistContainer::-webkit-scrollbar {
+        display: none;
+       }
+
+    .bgContainer{
+        display: flex;
+        position: fixed;
+        bottom: 60px;
+        right: 30px;
+        
+        width: 40px;
+        height: 40px;
+
+        padding: 8px 10px 12px 10px;
+        gap: 0px;
+        border-radius: 100px;
+        opacity: 0px;
+        background-color: #444DF2;
+        z-index: 98;
+ 
+        
+        
+
+        svg {   
+           
+            path {
+                fill: white;
+            }
+            cursor: pointer;
+
+        }
+    }
+
+    .inputDesign{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        width: 398px;
+        height: 30px;
+        padding: 8px 24px 8px 24px;
+        gap: 0px;
+        border-radius: 42px;
+        border: 1px solid #ADB0D9;
+
+        input {
+            border: none;
+            ::placeholder {
+                height: 25px;
+                @include nunito17Placeholder;
+                color: #686868;
+            }
+
+            &:focus {
+                outline: none;
+            }
+            
+        }
+    }
+
+    .channelListContainer{
+        height: fit-content;
+        align-items: baseline;
+    }
+
+    .channelMenuTitle{
+        >span{
+            width: 87px;
+            height: 27px;
+            gap: 0px;
+            opacity: 0px;
+            @include nunito20;
+        }
+    }
+
+
+    .channelBody {
+        >button {
+            >p{
+                width: 17.11px;
+                height: 16.65px;
+                position: relative;
+                display: flex;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 24px;
+            }
+            >span{
+                display: flex;
+                width: fit-content;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                @include nunito17;
+            }
+        }
+    }
+
+
+    .channelFoot{
+        >button{
+            >span{
+                display: flex;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                @include nunito17;
+                color: #535AF1,
+            }
+        }
+    }
+
+    .conversationMenuTitle{
+        >span{
+            width: 87px;
+            height: 27px;
+            gap: 0px;
+            opacity: 0px;
+            @include nunito20;
+        }
+    }
+
+
+    .conversationBody {
+        >button {
+            >span{
+                display: flex;
+                position: relative;
+                right: 15px;
+                width: fit-content;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                @include nunito17;
+            }
+        }
+    }
+
+
+
+}
+
+@media (max-width: 390px) {
+    section {
+        height: calc(100vh - 32px);
+    }
+}
+
+
+
+
+@media (max-height: 740px) {
+    section {
+        height: 100%;
+    }
+}
+
+
+
+
+
+@media (min-height: 900px) and (min-width: 850px) {
+    section {
+        height: 78.5vh;
+    }
+}
+
+
+
+@media (min-height: 1100px) and (min-width: 850px) {
+    section {
+        height: 79.5vh;
+    }
+}
+
+@media (min-height: 1300px) and (min-width: 850px) {
+    section {
+        height: 80vh;
+    }
+}
+
+@media (min-height: 1500px) and (min-width: 850px) {
+    section {
+        height: 81vh
+    }
+}

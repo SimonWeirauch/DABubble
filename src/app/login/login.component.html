@@ -1,0 +1,113 @@
+<section>
+    <!-- Overlay Section -->
+    <div [ngClass]="{'introOverlay': intro, 'overlay': !intro}">
+        <div class="introLogoCt">
+            <img [ngClass]="{'toLeft': switchlogo}" src="../../assets/img/Logoo.png" alt="">
+            <span [ngClass]="{'visible': textVisible}">DABubble</span>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <!-- Navigation -->
+        <nav>
+            <div class="logoMainContainer">
+                <img class="logoContainer"
+                [ngClass]="{'logoIntroAnimation': navLogoAnimation, 'logoContainer': !navLogoAnimation}"
+                src="../../assets/img/Logo.png" alt="logo">
+                <!-- <span>DABubble</span> -->
+            </div>
+            <div class="signUpLink">
+                <span>Neu bei DABubble?</span>
+                <a [routerLink]="['/signUp']">Konto erstellen</a>
+            </div>
+        </nav>
+
+        <!-- Main Container -->
+        <div class="mainContainer">
+            <form (ngSubmit)="onSubmit()" [formGroup]="myForm" class="card" data-aos="fade-right">
+                <h1>Anmeldung</h1>
+                <span>Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit verwendest.</span>
+                <div class="loginCt">
+                    <!-- Email Input -->
+                    <input
+                    type="email"
+                    formControlName="mail"
+                    (focus)="img.src = 'assets/img/mail-focus.png'"
+                    (blur)="img.src = 'assets/img/mail-Icon.png'"
+                    [ngClass]="{'redBorder': checkLoginData, 'defaultBorder': !borderAnimation}"
+                    placeholder="beispielname&#64;email.com" required>
+                    <img #img src="assets/img/mail-Icon.png" alt="">
+                    <p
+                    *ngIf="myForm.get('mail')?.invalid && myForm.get('mail')?.touched || invalidMail"
+                    [ngClass]="{'errorStyle': invalidMail || myForm.get('mail')?.invalid, 'opacityAnimation': falseLoginAnimation}"
+                    class="errorStyle">
+                        *Diese E-Mail-Adresse is leider ungültig.
+                    </p>
+                </div>
+                <!-- Password Input -->
+                <div class="loginCt">
+                    <input
+                    type="password"
+                    formControlName="pw"
+                    (focus)="lockImg.src = 'assets/img/lock-focus.png'"
+                    (blur)="lockImg.src = 'assets/img/lock-icon.png'"
+                    [ngClass]="{'redBorder': checkLoginData, 'defaultBorder': !borderAnimation}"
+                    placeholder="Passwort" required>
+                    <img #lockImg src="assets/img/lock-icon.png" alt="">
+                    <p 
+                        *ngIf="(myForm.get('pw')?.invalid && myForm.get('pw')?.touched) || invalidPassword" 
+                        [ngClass]="{'errorStyle': invalidPassword || myForm.get('pw')?.invalid, 'opacityAnimation': falseLoginAnimation}"
+                        class="errorStyle">
+                        *Falsches Passwort. Bitte noch einmal versuchen.
+                    </p>
+                </div>
+
+                <!-- Forgot Password Link -->
+                <a [routerLink]="['/forgotPassword']">Passwort vergessen?</a>
+                
+                <!-- Separator -->
+                <div class="separaterCt">
+                    <div></div>
+                    <span>ODER</span>
+                </div>
+
+                <!-- Google Authentication Button -->
+                <button (click)="googleAuthentification()" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()"
+                    [class.pressed]="isPressed"
+                    class="googleBtn"
+                    type="button">
+                    <img src="assets/img/Google.png" alt="googleIcon">
+                    <span>
+                        Anmelden mit Google
+                    </span>
+                </button>
+
+                <!-- Login and Guest Login Buttons -->
+                <div class="btnCt">
+                    <button
+                        type="submit"
+                        [disabled]="myForm.invalid || checkLoginData"
+                        [ngClass]="{'disabledBtn': myForm.invalid || checkLoginData}">
+                        Anmelden
+                    </button>
+                    <button type="button" (click)="guestLogin()">
+                        Gäste-Login
+                    </button>
+                </div>
+            </form>
+
+            <!-- Footer Links -->
+            <div class="footerCt">
+                <span [routerLink]="['/imprint']">Impressum</span>
+                <span [routerLink]="['/privacyPolicy']">Datenschutz</span>
+            </div>
+
+            @if(us.deviceMobileWidth < 850){
+                <div class="signUpLinkMobile">
+                    <span>Neu bei DABubble?</span>
+                    <button [routerLink]="['/signUp']">Konto erstellen</button>
+                </div>
+            }
+        </div>
+    </div>
+</section>

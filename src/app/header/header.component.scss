@@ -1,0 +1,369 @@
+@import url(../app.component.scss);
+
+header {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    gap: 10px;
+}
+
+.logo {
+    min-width: 320px;
+}
+
+.searchBar {
+    
+    input {
+        display: flex;
+        max-width: 989px;
+        min-width: 230px;
+        width: 35vw;
+        height: 32px;
+        position: relative;
+        right: 20px;
+        padding: 17.5px 45px 17.5px 45px;
+        gap: 0px;
+        border-radius: 42px;
+        border: unset;
+        margin-left: 0vw; 
+        margin-right: 0vw; 
+    }
+}
+
+
+.loggedUserBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Wichtig für die Positionierung des Dropdowns */
+    cursor: pointer; /* Zeiger-Cursor beim Überfahren mit der Maus */
+    right: 2vw;
+
+    >span {
+        font-family: "Nunito";
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 43.65px;
+        text-align: left;
+        width: fit-content;
+        display: flex;
+        text-wrap: nowrap;
+    }
+    .userAvatarCT {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-position: center;
+        object-fit: cover;
+        background-size: cover;
+        margin-left: 20px;
+        position: relative;
+
+        .status-indicator {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        
+            &.online {
+              background-color: #92C83E; /* Farbe für Online-Status */
+            }
+        
+            &.offline {
+              background-color: #686868; /* Farbe für Offline-Status */
+            }
+        }
+    }
+    >img {
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+    
+    &:hover span{
+        color: #444DF2;
+    }
+}
+
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    background: #fff;
+    z-index: 1000;
+    width: 282px;
+    padding: 30px;
+    gap: 15px;
+    border-radius: 30px 0px 30px 30px;
+    opacity: 0px;
+    box-shadow: 0px 6px 10px 0px #00000033;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    width: Fixed (222px)px;
+    height: 53px;
+    padding: 10px 70px 10px 70px;
+    gap: 15px;
+    border-radius: 100px;
+    opacity: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-family: "Nunito";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32.74px;
+    text-align: left;
+
+    &:hover {
+        border-radius: 30px;
+        background-color: #ECEEFE;
+        color: #444DF2;
+        font-weight: 700;
+    }
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+@media (max-width: 1350px) {
+
+    .loggedUserBar {
+        justify-content: flex-end;
+        width: 100%;
+        right: 30px;
+        >span {
+            display: none;
+        }
+
+        img {
+            margin-left: 0px;
+        }
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: unset;
+        right: 15%;
+    }
+
+
+
+    .searchBar {
+        input {
+            right: 0px;
+            width: 32vw;
+        }
+    }
+
+    header {
+        justify-content: unset;
+    }
+}
+
+@media (max-width: 1250px) {
+    .dropdown {
+        right: 15%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .loggedUserBar {
+        right: 30px;
+    }
+
+    header {
+        justify-content: unset;
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .loggedUserBar {
+        right: 30px;
+    }
+    
+    .searchBar {
+        input {
+            width: 30vw;
+        }
+    }
+}
+
+
+@media (max-width: 900px) {
+    .loggedUserBar {
+        right: 20px;
+    }
+
+    .dropdown {
+        right: 30%;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    header{
+        width: calc(100vw - 32px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        padding: 15px 16px 15px 11px !important;
+        
+        >div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0px;
+
+
+            >svg {
+                cursor: pointer;
+            }
+
+            >img {
+                height: 45px;
+                width: 161.5px;
+            }
+
+            >div {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                gap: 10px;
+                cursor: pointer;
+                
+                >img {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                >span {
+                    font-family: Nunito;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 32.74px;
+                }
+            }
+        }
+        .userAvatarCT {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-position: center;
+            object-fit: cover;
+            background-size: cover;
+            margin-left: 20px;
+            cursor: pointer;
+            position: relative;
+    
+            .status-indicator {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+            
+                &.online {
+                  background-color: #92C83E; /* Farbe für Online-Status */
+                }
+            
+                &.offline {
+                  background-color: #686868; /* Farbe für Offline-Status */
+                }
+            }
+        }
+        >img {
+            width: 50px;
+            height: 50px;
+            border-radius: 60px;
+            cursor: pointer;
+        }
+    }
+
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 77vh;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+        width: calc(100% - 45px);
+        padding: 30px 26px 30px 26px;
+        gap: 15px;
+        border-radius: 30px 30px 0px 0px;
+        opacity: 0px;
+        box-shadow: 0px -3px 10px 0px #00000033;
+    }
+
+
+    
+    .dropdown ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        padding: 15px 16px 15px 16px !important;
+    }
+    
+    .dropdown ul li {
+        cursor: pointer;
+        height: 53px;
+        padding: 10px 80px 10px 80px;
+        gap: 15px;
+        border-radius: 100px;
+        opacity: 0px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        font-family: "Nunito";
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+    }
+    
+
+    @media (max-height: 741px) {
+        .dropdown {
+            top: 70vh;   
+        }
+    }
+}

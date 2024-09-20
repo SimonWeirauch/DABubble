@@ -1,0 +1,173 @@
+@media (max-width: 1650px) {
+    section {
+       right: 35.5vw;
+    }
+}
+
+
+@media (max-width: 1450px) {
+    section {
+        left: 400px;
+        right: unset;
+    }
+}
+
+
+@media (max-width: 1350px) {
+    section {
+        width: clamp(200px, 28vw, 434px);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    section {
+        left: unset;
+        right: 7vw;
+        width: clamp(200px, 31vw, 434px);
+    }
+}
+
+
+
+
+@media (max-width: 500px) {
+
+    section {
+        width: 80vw;
+        padding: 30px 16px 30px 16px;
+        border-radius: 30px 0px 30px 30px;
+        position: relative !important;
+        top: -190px;
+        left: -10%;
+        gap: 20px;
+    }
+
+
+
+
+    .headline {
+        width: 100%;
+    }
+
+    .userInput {
+        width: calc(100% - 40px);
+        height: 23px;
+        padding: 15px 20px 15px 20px;
+        gap: 10px;
+
+        .inputWrapper {
+            .selectedList {
+                position: relative;
+                top: -12px;   
+                .selectedUser{
+                    top: -8px;
+                    >img{
+                        width: 40px !important;
+                        height: 40px !important;
+                    }
+       
+                    >svg{
+                        right: 11px;
+                        top: 15px;
+                    }
+               }
+               
+               .selectedListLength{
+                   display: flex;
+                   width: 30px;
+                   >span {
+                       position: relative;
+                       right: 28px;
+                       top: -6px;
+                       z-index: 99;
+                       height: 25px;
+                       gap: 0px;
+                       opacity: 0px;
+                       font-family: Nunito;
+                       font-size: 18px;
+                       font-weight: 400;
+                       line-height: 24.55px;
+                       text-align: left;
+                       padding: 5px;
+                   }
+               }
+            }
+        
+            >input {
+                width: fit-content;
+                height: 62px;
+                padding: 0px 20px 0px 20px;
+                gap: 30px;
+                position: relative;
+                top: -18px;
+
+
+            }
+        }
+    }
+
+    .btnContainer{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 10px;
+
+    }
+
+
+    .userlistContainer{
+        top: 150px;
+        left: 30px;
+        padding: 0px;
+
+        gap: 20px;
+        border-radius: 0px 30px 30px 30px;
+        opacity: 0px;
+        border: 1px solid #535AF1;
+        overflow: auto;
+        background-color: #FFFFFF;
+            .userList {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: fit-content;
+                padding: 0px 15px 0px 15px;
+                >div {
+                    display: flex;
+                    align-items: center;
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                        gap: 0px;
+                        border-radius: 30px;
+                        opacity: 0px;
+                    }
+                   
+                    >svg{
+                        display: flex;
+                        position: relative;
+                        right: 15px;
+                        top: 18px;
+                    }
+            
+                    span {
+                        display: flex;
+                        position: relative;
+                        width: fit-content;
+                        height: 25px;
+                        gap: 0px;
+                        opacity: 0px;
+                        font-family: Nunito;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24.55px;
+                        text-align: left;
+                    }
+                }
+            }
+       }
+       
+
+
+}

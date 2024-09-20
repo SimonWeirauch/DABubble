@@ -1,0 +1,375 @@
+section {
+    padding: 40px;
+    border-radius: 30px;
+    opacity: 0px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.disabledButton{
+    background: #686868 !important;
+    cursor:  auto !important;
+}
+
+.headline {
+    width: 100%;
+    max-width: 830px;
+    height: 40px;
+    gap: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0px;
+    .closeSvgBg{
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        opacity: 0px;
+        svg:hover {
+            path {
+                fill: #535AF1;
+            }
+            background-color:#ECEEFE;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+
+    >span{
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        height: 33px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: Nunito;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.74px;
+        text-align: left;
+    }
+}
+
+.description {
+    display: flex;
+    width: 100%;
+    max-width: 792px;
+    height: fit-content;
+    gap: 0px;
+    opacity: 0px;
+    >span {
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.55px;
+        text-align: left;
+    }
+}
+
+.channelInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 792px;
+    height: 105px;
+    gap: 20px;
+    opacity: 0px;
+    >span {
+        display: flex;
+        width: fit-content;
+        height: 25px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24.55px;
+        text-align: left;
+    }
+
+    >input {
+        display: flex;
+        max-width: 792px;
+        width: calc(100% - 40px);
+        height: 60px;
+        padding: 18px 20px 18px 20px;
+        gap: 20px;
+        border-radius: 40px;
+        border: 1px;
+        opacity: 0px;
+        border: 1px solid #ADB0D9;
+        cursor: pointer;
+        ::placeholder {
+            display: flex;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;
+            color: #686868;
+            width: 205px;
+            height: 25px;
+            gap: 0px;
+            opacity: 0px;
+        }
+    }
+
+    input:focus {
+        outline: none !important;
+    }
+
+    input:hover{
+        border: 1px solid #535AF1;
+    }
+
+    >label {
+        font-family: Nunito;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24.55px;
+        text-align: left;
+        color: red;
+        position: relative;
+        bottom: 18px;
+        left: 24px;
+    }
+}
+
+.descriptionInput {
+    display: flex;
+    flex-direction: column;
+    max-width: 792px;
+    width: 100%;
+    height: 110px;
+    gap: 20px;
+    opacity: 0px;
+    >p{
+        display: flex;
+        max-width: 792px;
+        width: 100%;
+        height: 25px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24.55px;
+        text-align: left;
+
+        >span{
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;
+            color: #686868;
+        }
+    }
+
+    >input {
+        display: flex;
+        max-width: 792px;
+        width: calc(100% - 40px);
+        height: 65px;
+        padding: 18px 20px 18px 20px;
+        gap: 30px;
+        border-radius: 30px;
+        border: 1px;
+        opacity: 0px;
+        border: 1px solid #ADB0D9;
+        cursor: pointer;
+        ::placeholder {
+            display: flex;
+            max-width: 792px;
+            width: 100%;
+            height: 25px;
+            gap: 20px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;
+            color: #686868;
+        }
+    }
+
+    input:focus{
+        outline: none !important;
+    }
+
+    input:hover{
+        border: 1px solid #535AF1;
+    }
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: flex-end;
+    max-width: 830px;
+    width: 100%;
+    margin-top: 10px;
+    button {
+        cursor: pointer;
+        display: flex;
+        width: 125px;
+        height: 49px;
+        padding: 12px 25px 12px 25px;
+        gap: 10px;
+        border-radius: 25px;
+        opacity: 0px;
+        background: #444DF2;
+        border: none;
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24.55px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    button:hover {
+        background-color: #797EF3;
+    }
+}
+
+
+@media (max-width: 850px) {
+    
+    section {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        padding: 40px;
+        border-radius: 0px;
+        opacity: 0px;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    
+    .headline {
+        width: calc(100vw - 40px);
+
+        >span{
+            width: fit-content;
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32.74px;
+            text-align: left;
+        }
+    }
+
+    .description {
+        width: calc(100vw - 60px);
+        height: fit-content;
+        >span {
+            font-family: Nunito;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 23.19px;
+            text-align: left;
+        }
+    }
+
+
+    .channelInput {
+        width: calc(100vw - 100px);
+        >span {
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+            text-align: left;
+        }
+    
+        >input {
+            width: calc(100vw - 100px);
+            ::placeholder {
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+                width: calc(100vw - 100px);
+
+            }
+        }
+    
+    }
+
+    .descriptionInput {
+        width: calc(100vw - 100px);
+        >p{
+            width: calc(100vw - 100px);
+
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+            text-align: left;
+    
+            >span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+            }
+        }
+    
+        >input {
+            width: calc(100vw - 100px);
+            ::placeholder {
+                width: calc(100vw - 100px);
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+
+            }
+        }
+    }
+
+    .btnContainer{
+        display: flex;
+        justify-content: flex-end;
+        width: calc(100vw - 65px);
+        margin-top: 10px;
+        button {
+            cursor: pointer;
+            display: flex;
+            width: 125px;
+            height: 49px;
+            padding: 12px 25px 12px 25px;
+            gap: 10px;
+            border-radius: 25px;
+            opacity: 0px;
+            background: #444DF2;
+            border: none;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+    
+        button:hover {
+            background-color: #797EF3;
+        }
+    }
+
+    ::ng-deep .customDialog {
+        .mdc-dialog {
+            position: absolute;
+        }
+
+    } 
+
+}

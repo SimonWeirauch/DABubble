@@ -1,0 +1,158 @@
+<section>
+  <form
+  [formGroup]="myForm"
+  (ngSubmit)="editUser()"
+  [ngStyle]="{
+    'height': (showPasswordInput && isScreenSmall()) ? '83vh' : (showPasswordInput ? '685px' : (isScreenSmall() ? '80vh' : '625px')),
+    'gap': (showPasswordInput || isScreenSmall()) ? '36px' : '44px'
+  }"
+  >
+    <div class="headline"
+    >
+      <ng-container *ngIf="editMode; then thenTemplate; else elseTemplate"></ng-container>
+      <ng-template #thenTemplate>
+          <span>Dein Profil bearbeiten</span>
+      </ng-template>
+      <ng-template #elseTemplate>
+          <span>Profil</span>
+      </ng-template>
+      <div class="closeSvgBg">
+          <!--close svg-->
+          <svg (click)="dialogRef.close()" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_54572_9033" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+              <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_54572_9033)">
+              <path d="M20 21.4L15.1 26.3C14.9167 26.4833 14.6834 26.575 14.4 26.575C14.1167 26.575 13.8834 26.4833 13.7 26.3C13.5167 26.1167 13.425 25.8833 13.425 25.6C13.425 25.3167 13.5167 25.0833 13.7 24.9L18.6 20L13.7 15.1C13.5167 14.9167 13.425 14.6833 13.425 14.4C13.425 14.1167 13.5167 13.8833 13.7 13.7C13.8834 13.5167 14.1167 13.425 14.4 13.425C14.6834 13.425 14.9167 13.5167 15.1 13.7L20 18.6L24.9 13.7C25.0834 13.5167 25.3167 13.425 25.6 13.425C25.8834 13.425 26.1167 13.5167 26.3 13.7C26.4834 13.8833 26.575 14.1167 26.575 14.4C26.575 14.6833 26.4834 14.9167 26.3 15.1L21.4 20L26.3 24.9C26.4834 25.0833 26.575 25.3167 26.575 25.6C26.575 25.8833 26.4834 26.1167 26.3 26.3C26.1167 26.4833 25.8834 26.575 25.6 26.575C25.3167 26.575 25.0834 26.4833 24.9 26.3L20 21.4Z" fill="black"/>
+              </g>
+          </svg>
+      </div>
+  </div>
+
+  <ng-container *ngIf="editMode; then thenTemplate0; else elseTemplate0"></ng-container>
+  <ng-template #thenTemplate0>
+      <div class="image">
+          <div
+          [ngStyle]="{'background-image': selectedAvatar ? 'url(' + selectedAvatar + ')' : 'url(../../assets/img/unUsedDefault.png)'}"
+          (click)="triggerFileUpload(fileInput)"
+          class="avatarImageCt">
+          </div>
+          <input id="fileInput" type="file" accept="image/*" (change)="selectFile($event)" #fileInput />
+      </div>
+  </ng-template>
+  <ng-template #elseTemplate0>
+      <div class="image">
+          <img src="{{ userData.avatarUrl }}">
+      </div>
+  </ng-template>
+
+
+  
+  <ng-container *ngIf="editMode; then thenTemplate1; else elseTemplate1"></ng-container>
+  <ng-template #thenTemplate1>
+      <div class="userNameCt">
+          <div>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_813_12108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+              <rect width="24" height="24" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_813_12108)">
+              <path d="M5.85 17.1C6.7 16.45 7.65 15.9373 8.7 15.562C9.75 15.1873 10.85 15 12 15C13.15 15 14.25 15.1873 15.3 15.562C16.35 15.9373 17.3 16.45 18.15 17.1C18.7333 16.4167 19.1877 15.6417 19.513 14.775C19.8377 13.9083 20 12.9833 20 12C20 9.78333 19.221 7.89567 17.663 6.337C16.1043 4.779 14.2167 4 12 4C9.78333 4 7.896 4.779 6.338 6.337C4.77933 7.89567 4 9.78333 4 12C4 12.9833 4.16267 13.9083 4.488 14.775C4.81267 15.6417 5.26667 16.4167 5.85 17.1ZM12 13C11.0167 13 10.1873 12.6627 9.512 11.988C8.83733 11.3127 8.5 10.4833 8.5 9.5C8.5 8.51667 8.83733 7.68733 9.512 7.012C10.1873 6.33733 11.0167 6 12 6C12.9833 6 13.8127 6.33733 14.488 7.012C15.1627 7.68733 15.5 8.51667 15.5 9.5C15.5 10.4833 15.1627 11.3127 14.488 11.988C13.8127 12.6627 12.9833 13 12 13ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88333 20.6873 5.825 19.975 4.925 19.075C4.025 18.175 3.31267 17.1167 2.788 15.9C2.26267 14.6833 2 13.3833 2 12C2 10.6167 2.26267 9.31667 2.788 8.1C3.31267 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.31233 8.1 2.787C9.31667 2.26233 10.6167 2 12 2C13.3833 2 14.6833 2.26233 15.9 2.787C17.1167 3.31233 18.175 4.025 19.075 4.925C19.975 5.825 20.6873 6.88333 21.212 8.1C21.7373 9.31667 22 10.6167 22 12C22 13.3833 21.7373 14.6833 21.212 15.9C20.6873 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6873 15.9 21.212C14.6833 21.7373 13.3833 22 12 22ZM12 20C12.8833 20 13.7167 19.871 14.5 19.613C15.2833 19.3543 16 18.9833 16.65 18.5C16 18.0167 15.2833 17.6457 14.5 17.387C13.7167 17.129 12.8833 17 12 17C11.1167 17 10.2833 17.129 9.5 17.387C8.71667 17.6457 8 18.0167 7.35 18.5C8 18.9833 8.71667 19.3543 9.5 19.613C10.2833 19.871 11.1167 20 12 20ZM12 11C12.4333 11 12.7917 10.8583 13.075 10.575C13.3583 10.2917 13.5 9.93333 13.5 9.5C13.5 9.06667 13.3583 8.70833 13.075 8.425C12.7917 8.14167 12.4333 8 12 8C11.5667 8 11.2083 8.14167 10.925 8.425C10.6417 8.70833 10.5 9.06667 10.5 9.5C10.5 9.93333 10.6417 10.2917 10.925 10.575C11.2083 10.8583 11.5667 11 12 11Z" fill="black"/>
+              </g>
+            </svg>
+            <span>Vollständiger Name</span>
+          </div>
+          <input formControlName="name" type="text">
+          <p *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">*Dieser Name ist leider ungültig</p>
+      </div>
+  </ng-template>
+  <ng-template #elseTemplate1>
+      <div class="userNameContainer">
+          <div class="userHeadCt">
+              <span>{{ userData.name }}</span>
+              <p (click)="openEditTemplate()">Bearbeiten</p>
+          </div>
+          <div class="statusCt">
+              <!--Status Symbol-->
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+              </svg>
+              <span>{{ userData.status }}</span>
+          </div>
+      </div>
+  </ng-template>
+
+  
+
+  <ng-container *ngIf="editMode; then thenTemplate2; else elseTemplate2"></ng-container>
+  <ng-template #thenTemplate2>
+    <div class="userMailContainer">
+      <div>
+        <!--Mail Symbol-->
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_56549_3731" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+            <rect width="30" height="30" fill="#D9D9D9"/>
+          </mask>
+          <g mask="url(#mask0_56549_3731)">
+            <path d="M5 25C4.3125 25 3.72417 24.7554 3.235 24.2663C2.745 23.7763 2.5 23.1875 2.5 22.5V7.5C2.5 6.8125 2.745 6.22417 3.235 5.735C3.72417 5.245 4.3125 5 5 5H25C25.6875 5 26.2763 5.245 26.7663 5.735C27.2554 6.22417 27.5 6.8125 27.5 7.5V22.5C27.5 23.1875 27.2554 23.7763 26.7663 24.2663C26.2763 24.7554 25.6875 25 25 25H5ZM25 10L15.6562 15.8438C15.5521 15.9062 15.4425 15.9529 15.3275 15.9837C15.2133 16.0154 15.1042 16.0312 15 16.0312C14.8958 16.0312 14.7867 16.0154 14.6725 15.9837C14.5575 15.9529 14.4479 15.9062 14.3438 15.8438L5 10V22.5H25V10ZM15 13.75L25 7.5H5L15 13.75ZM5 10.3125V8.46875V8.5V8.48375V10.3125Z" fill="black"/>
+          </g>
+        </svg>
+        <span>E-Mail-Adresse</span>
+      </div>
+      <input formControlName="email" type="text" (input)="onEmailChange()">
+      <p *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">*Diese E-Mail-Adresse ist leider ungültig.</p>
+      <input class="passwordField"
+      *ngIf="showPasswordInput"
+      formControlName="password"
+      type="password"
+      placeholder="Bitte Passwort eingeben"
+      required>
+      <p class="showErrorByWrongPassword" *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">*Das Passwort ist ungültig oder zu kurz</p>
+    </div>
+  </ng-template>
+  <ng-template #elseTemplate2>
+    <div class="userMailContainer"> 
+      <div>
+        <!--Mail Symbol-->
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_56549_3731" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+            <rect width="30" height="30" fill="#D9D9D9"/>
+          </mask>
+          <g mask="url(#mask0_56549_3731)">
+            <path d="M5 25C4.3125 25 3.72417 24.7554 3.235 24.2663C2.745 23.7763 2.5 23.1875 2.5 22.5V7.5C2.5 6.8125 2.745 6.22417 3.235 5.735C3.72417 5.245 4.3125 5 5 5H25C25.6875 5 26.2763 5.245 26.7663 5.735C27.2554 6.22417 27.5 6.8125 27.5 7.5V22.5C27.5 23.1875 27.2554 23.7763 26.7663 24.2663C26.2763 24.7554 25.6875 25 25 25H5ZM25 10L15.6562 15.8438C15.5521 15.9062 15.4425 15.9529 15.3275 15.9837C15.2133 16.0154 15.1042 16.0312 15 16.0312C14.8958 16.0312 14.7867 16.0154 14.6725 15.9837C14.5575 15.9529 14.4479 15.9062 14.3438 15.8438L5 10V22.5H25V10ZM15 13.75L25 7.5H5L15 13.75ZM5 10.3125V8.46875V8.5V8.48375V10.3125Z" fill="black"/>
+          </g>
+        </svg>
+        <span>E-Mail-Adresse</span>
+      </div>
+      <span>{{ userData.email }}</span>
+    </div>    
+  </ng-template>
+
+
+  <ng-container *ngIf="editMode; then thenTemplate3; else elseTemplate3"></ng-container>
+  <ng-template #thenTemplate3>
+      <div class="btnContainer"
+      [ngStyle]="showPasswordInput ? {'margin-top': '106px'} : {'margin-top': '10px'}">
+          <button type="button" class="secondaryBtn" (click)="closeEdit()">Abbrechen</button>
+          <button type="submit" class="primaryBtn">Speichern</button>
+      </div>
+      
+  </ng-template>
+  <ng-template #elseTemplate3>
+      <div class="sendMessage">
+          <button type="button" (click)="openConversation(this.us.activeUserOwnConversation)">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_56549_3738" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+                  <rect y="0.5" width="24" height="24" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_56549_3738)">
+                  <path d="M20.3 20.8L18 18.5H4C3.45 18.5 2.97933 18.3043 2.588 17.913C2.196 17.521 2 17.05 2 16.5V4.5C2 3.95 2.196 3.479 2.588 3.087C2.97933 2.69567 3.45 2.5 4 2.5H20C20.55 2.5 21.021 2.69567 21.413 3.087C21.8043 3.479 22 3.95 22 4.5V20.075C22 20.525 21.796 20.8373 21.388 21.012C20.9793 21.1873 20.6167 21.1167 20.3 20.8ZM4 4.5V16.5H18.825L20 17.675V4.5H4Z" fill="white"/>
+                  </g>
+              </svg>
+              <span>Nachricht</span>
+          </button>
+      </div>
+  </ng-template>
+  </form>
+
+</section>

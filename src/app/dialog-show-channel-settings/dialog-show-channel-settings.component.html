@@ -1,0 +1,289 @@
+<section>
+    @if(us.deviceWidth > 850){
+        <div class="headline">
+            <div class="headlineNameWrapper">
+                <span>#</span>
+                <span>{{currentChannel.name}}</span>
+            </div>
+    
+            <div class="closeSvgBg" >
+                <!--close svg-->
+                <svg (click)="dialogRef.close(false)" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_54572_9033" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+                    <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_54572_9033)">
+                    <path d="M20 21.4L15.1 26.3C14.9167 26.4833 14.6834 26.575 14.4 26.575C14.1167 26.575 13.8834 26.4833 13.7 26.3C13.5167 26.1167 13.425 25.8833 13.425 25.6C13.425 25.3167 13.5167 25.0833 13.7 24.9L18.6 20L13.7 15.1C13.5167 14.9167 13.425 14.6833 13.425 14.4C13.425 14.1167 13.5167 13.8833 13.7 13.7C13.8834 13.5167 14.1167 13.425 14.4 13.425C14.6834 13.425 14.9167 13.5167 15.1 13.7L20 18.6L24.9 13.7C25.0834 13.5167 25.3167 13.425 25.6 13.425C25.8834 13.425 26.1167 13.5167 26.3 13.7C26.4834 13.8833 26.575 14.1167 26.575 14.4C26.575 14.6833 26.4834 14.9167 26.3 15.1L21.4 20L26.3 24.9C26.4834 25.0833 26.575 25.3167 26.575 25.6C26.575 25.8833 26.4834 26.1167 26.3 26.3C26.1167 26.4833 25.8834 26.575 25.6 26.575C25.3167 26.575 25.0834 26.4833 24.9 26.3L20 21.4Z" fill="black"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+            @if(showEditNameInput){
+                <div class="channelNameInputWrapper">
+                    <div class="channelNameEdit">
+                        <span>Channel-Name</span>
+                        <p (click)="saveChangedChannelName()">Speichern</p>
+                    </div>
+    
+                    <div class="userInput">
+                        <div class="inputWrapper">
+                            <span>#</span>
+                            <input (input)="setDefault()" placeholder="{{currentChannel.name}}" [(ngModel)]="newChannelName" >
+                        </div>
+                        <label #errorMsg ></label>
+                    </div>
+                </div>
+            }
+            @else{
+                <div class="channelNameWrapper">
+                    <div class="channelNameEdit">
+                        <span>Channel-Name</span>
+                        <p (click)="changeToEditView('name')">Bearbeiten</p>
+                    </div>
+                    
+                    <div class="channelName">
+                        <span>#</span>
+                        <span>{{currentChannel.name}}</span>
+                    </div>
+                </div>
+            }     
+     
+    
+        @if(showEditDescriptionInput){
+            <div class="channelInputInfo">
+                <div class="channelDescriptionInputWrapper">
+                    <div class="channelDescriptionEdit">
+                        <span>Beschreibung</span>
+                        <p (click)="saveChangedChannelDescription()">Speichern</p>
+                    </div>
+    
+                    <div class="userInput">
+                        <div class="inputWrapper">
+                            <span>#</span>
+                            <input placeholder="{{currentChannel.description}}" [(ngModel)]="newChannelDescription" >
+                        </div>
+                        <label #errorMsg ></label>
+                    </div>
+                </div>
+        
+                <svg width="739" height="2" viewBox="0 0 739 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H739" stroke="#ADB0D9"/>
+                </svg> 
+        
+                <div class="createdByWrapper">
+                    <span>Erstellt von</span>
+                    <p>{{channelCreator.name}}</p>
+                </div>
+            </div>
+        }
+        @else {
+            <div class="channelInfo">
+                <div class="channelDescriptionWrapper">
+                    <div class="channelDescriptionEdit">
+                        <span>Beschreibung</span>
+                        <p (click)="changeToEditView('description')">Bearbeiten</p>
+                    </div>
+                    <div class="channelDescription">
+                        <span>{{currentChannel.description}}</span>
+                    </div>
+                </div>
+        
+                <svg width="739" height="2" viewBox="0 0 739 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H739" stroke="#ADB0D9"/>
+                </svg> 
+        
+                <div class="createdByWrapper">
+                    <span>Erstellt von</span>
+                    <p>{{channelCreator.name}}</p>
+                </div>
+            </div>
+        }
+    
+    
+        <div class="btnContainer">
+            <button (click)="leaveChannel()">Channel verlassen</button>
+        </div>
+    }
+    @else {
+        <div class="headline">
+            <div class="headlineNameWrapper">
+                <span>#</span>
+                <span>{{currentChannel.name}}</span>
+            </div>
+    
+            <div class="closeSvgBg" >
+                <!--close svg-->
+                <svg (click)="dialogRef.close(false)" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_54572_9033" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+                    <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_54572_9033)">
+                    <path d="M20 21.4L15.1 26.3C14.9167 26.4833 14.6834 26.575 14.4 26.575C14.1167 26.575 13.8834 26.4833 13.7 26.3C13.5167 26.1167 13.425 25.8833 13.425 25.6C13.425 25.3167 13.5167 25.0833 13.7 24.9L18.6 20L13.7 15.1C13.5167 14.9167 13.425 14.6833 13.425 14.4C13.425 14.1167 13.5167 13.8833 13.7 13.7C13.8834 13.5167 14.1167 13.425 14.4 13.425C14.6834 13.425 14.9167 13.5167 15.1 13.7L20 18.6L24.9 13.7C25.0834 13.5167 25.3167 13.425 25.6 13.425C25.8834 13.425 26.1167 13.5167 26.3 13.7C26.4834 13.8833 26.575 14.1167 26.575 14.4C26.575 14.6833 26.4834 14.9167 26.3 15.1L21.4 20L26.3 24.9C26.4834 25.0833 26.575 25.3167 26.575 25.6C26.575 25.8833 26.4834 26.1167 26.3 26.3C26.1167 26.4833 25.8834 26.575 25.6 26.575C25.3167 26.575 25.0834 26.4833 24.9 26.3L20 21.4Z" fill="black"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+        @if(showEditNameInput){
+                <div class="channelNameInputWrapper">
+                    <div class="channelNameEdit">
+                        <span>Channel-Name</span>
+                        <svg (click)="saveChangedChannelDescription()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_61879_3088" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_61879_3088)">
+                            <path d="M10.6 13.8L8.45 11.65C8.26667 11.4667 8.03333 11.375 7.75 11.375C7.46667 11.375 7.23333 11.4667 7.05 11.65C6.86667 11.8333 6.775 12.0667 6.775 12.35C6.775 12.6333 6.86667 12.8667 7.05 13.05L9.9 15.9C10.1 16.1 10.3333 16.2 10.6 16.2C10.8667 16.2 11.1 16.1 11.3 15.9L16.95 10.25C17.1333 10.0667 17.225 9.83333 17.225 9.55C17.225 9.26667 17.1333 9.03333 16.95 8.85C16.7667 8.66667 16.5333 8.575 16.25 8.575C15.9667 8.575 15.7333 8.66667 15.55 8.85L10.6 13.8ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="black"/>
+                            </g>
+                        </svg>
+                    </div>
+    
+                    <div class="userInput">
+                        <div class="inputWrapper"> 
+                            <span>#</span>
+                            <input (input)="setDefault()" placeholder="{{currentChannel.name}}" [(ngModel)]="newChannelName" >
+                        </div>
+                        <label #errorMsg ></label>
+                    </div>
+                </div>
+            }
+            @else{
+                <div class="channelNameWrapper">
+                    <div class="channelNameEdit">
+                        <span>Channel-Name</span>
+                        <svg (click)="changeToEditView('name')" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="30" height="30" rx="15" fill="#ECEEFE"/>
+                            <mask id="mask0_61879_2008" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="24" height="24">
+                            <rect x="3" y="3" width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_61879_2008)">
+                            <path d="M8 22H9.4L18.025 13.375L16.625 11.975L8 20.6V22ZM22.3 11.925L18.05 7.725L19.45 6.325C19.8333 5.94167 20.3043 5.75 20.863 5.75C21.421 5.75 21.8917 5.94167 22.275 6.325L23.675 7.725C24.0583 8.10833 24.2583 8.571 24.275 9.113C24.2917 9.65433 24.1083 10.1167 23.725 10.5L22.3 11.925ZM7 24C6.71667 24 6.47933 23.904 6.288 23.712C6.096 23.5207 6 23.2833 6 23V20.175C6 20.0417 6.025 19.9127 6.075 19.788C6.125 19.6627 6.2 19.55 6.3 19.45L16.6 9.15L20.85 13.4L10.55 23.7C10.45 23.8 10.3377 23.875 10.213 23.925C10.0877 23.975 9.95833 24 9.825 24H7Z" fill="#1C1B1F"/>
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <div class="channelName">
+                        <span>#</span>
+                        <span>{{currentChannel.name}}</span>
+                    </div>
+                </div>
+            }     
+     
+    
+        @if(showEditDescriptionInput){
+            <div class="channelInputInfo">
+                <div class="channelDescriptionInputWrapper">
+                    <div class="channelDescriptionEdit">
+                        <span>Beschreibung</span>
+                        <svg (click)="saveChangedChannelDescription()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_61879_3088" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_61879_3088)">
+                            <path d="M10.6 13.8L8.45 11.65C8.26667 11.4667 8.03333 11.375 7.75 11.375C7.46667 11.375 7.23333 11.4667 7.05 11.65C6.86667 11.8333 6.775 12.0667 6.775 12.35C6.775 12.6333 6.86667 12.8667 7.05 13.05L9.9 15.9C10.1 16.1 10.3333 16.2 10.6 16.2C10.8667 16.2 11.1 16.1 11.3 15.9L16.95 10.25C17.1333 10.0667 17.225 9.83333 17.225 9.55C17.225 9.26667 17.1333 9.03333 16.95 8.85C16.7667 8.66667 16.5333 8.575 16.25 8.575C15.9667 8.575 15.7333 8.66667 15.55 8.85L10.6 13.8ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="black"/>
+                            </g>
+                        </svg>
+                    </div>
+    
+                    <div class="userInput">
+                        <div class="inputWrapper">
+
+                            <input placeholder="{{currentChannel.description}}" [(ngModel)]="newChannelDescription" >
+                        </div>
+                        <label #errorMsg ></label>
+                    </div>
+                </div>
+        
+                <svg width="739" height="2" viewBox="0 0 739 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H739" stroke="#ADB0D9"/>
+                </svg> 
+        
+                <div class="createdByWrapper">
+                    <span>Erstellt von</span>
+                    <p>{{channelCreator.name}}</p>
+                </div>
+            </div>
+        }
+        @else {
+            <div class="channelInfo">
+                <div class="channelDescriptionWrapper">
+                    <div class="channelDescriptionEdit">
+                        <span>Beschreibung</span>
+                        <svg (click)="changeToEditView('description')" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="30" height="30" rx="15" fill="#ECEEFE"/>
+                            <mask id="mask0_61879_2008" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="24" height="24">
+                            <rect x="3" y="3" width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_61879_2008)">
+                            <path d="M8 22H9.4L18.025 13.375L16.625 11.975L8 20.6V22ZM22.3 11.925L18.05 7.725L19.45 6.325C19.8333 5.94167 20.3043 5.75 20.863 5.75C21.421 5.75 21.8917 5.94167 22.275 6.325L23.675 7.725C24.0583 8.10833 24.2583 8.571 24.275 9.113C24.2917 9.65433 24.1083 10.1167 23.725 10.5L22.3 11.925ZM7 24C6.71667 24 6.47933 23.904 6.288 23.712C6.096 23.5207 6 23.2833 6 23V20.175C6 20.0417 6.025 19.9127 6.075 19.788C6.125 19.6627 6.2 19.55 6.3 19.45L16.6 9.15L20.85 13.4L10.55 23.7C10.45 23.8 10.3377 23.875 10.213 23.925C10.0877 23.975 9.95833 24 9.825 24H7Z" fill="#1C1B1F"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="channelDescription">
+                        <span>{{currentChannel.description}}</span>
+                    </div>
+                </div>
+        
+                <svg width="739" height="2" viewBox="0 0 739 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H739" stroke="#ADB0D9"/>
+                </svg> 
+
+
+        
+                <div class="createdByWrapper">
+                    <span>Erstellt von</span>
+                    <p>{{channelCreator.name}}</p>
+                </div>
+            </div>
+        }
+    
+        <div class="channelNameWrapper">
+            <div class="channelNameEdit">
+                <span>Mitglieder</span>
+
+            </div>
+            
+            <div class="channelUser">
+                
+                <div class="userlistContainer" >
+                    <div *ngFor="let user of userlist" class="userList" (click)="openProfile(user)">
+                        <div >
+                            <img src="{{user.avatarUrl}}">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                            </svg>
+                            <span>{{user.name}}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="addMember">
+                    <div (click)="showAddMember()" >
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#ECEEFE"/>
+                            <mask id="mask0_55820_3895" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
+                            <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_55820_3895)">
+                            <path d="M23 18C22.7167 18 22.4793 17.904 22.288 17.712C22.096 17.5207 22 17.2833 22 17V15H20C19.7167 15 19.4793 14.904 19.288 14.712C19.096 14.5207 19 14.2833 19 14C19 13.7167 19.096 13.479 19.288 13.287C19.4793 13.0957 19.7167 13 20 13H22V11C22 10.7167 22.096 10.479 22.288 10.287C22.4793 10.0957 22.7167 10 23 10C23.2833 10 23.5207 10.0957 23.712 10.287C23.904 10.479 24 10.7167 24 11V13H26C26.2833 13 26.5207 13.0957 26.712 13.287C26.904 13.479 27 13.7167 27 14C27 14.2833 26.904 14.5207 26.712 14.712C26.5207 14.904 26.2833 15 26 15H24V17C24 17.2833 23.904 17.5207 23.712 17.712C23.5207 17.904 23.2833 18 23 18ZM13 16C11.9 16 10.9583 15.6083 10.175 14.825C9.39167 14.0417 9 13.1 9 12C9 10.9 9.39167 9.95833 10.175 9.175C10.9583 8.39167 11.9 8 13 8C14.1 8 15.0417 8.39167 15.825 9.175C16.6083 9.95833 17 10.9 17 12C17 13.1 16.6083 14.0417 15.825 14.825C15.0417 15.6083 14.1 16 13 16ZM6 24C5.71667 24 5.47933 23.904 5.288 23.712C5.096 23.5207 5 23.2833 5 23V21.2C5 20.6333 5.146 20.1123 5.438 19.637C5.72933 19.1623 6.11667 18.8 6.6 18.55C7.63333 18.0333 8.68333 17.6457 9.75 17.387C10.8167 17.129 11.9 17 13 17C14.1 17 15.1833 17.129 16.25 17.387C17.3167 17.6457 18.3667 18.0333 19.4 18.55C19.8833 18.8 20.2707 19.1623 20.562 19.637C20.854 20.1123 21 20.6333 21 21.2V23C21 23.2833 20.904 23.5207 20.712 23.712C20.5207 23.904 20.2833 24 20 24H6ZM7 22H19V21.2C19 21.0167 18.9543 20.85 18.863 20.7C18.771 20.55 18.65 20.4333 18.5 20.35C17.6 19.9 16.6917 19.5623 15.775 19.337C14.8583 19.1123 13.9333 19 13 19C12.0667 19 11.1417 19.1123 10.225 19.337C9.30833 19.5623 8.4 19.9 7.5 20.35C7.35 20.4333 7.22933 20.55 7.138 20.7C7.046 20.85 7 21.0167 7 21.2V22ZM13 14C13.55 14 14.021 13.804 14.413 13.412C14.8043 13.0207 15 12.55 15 12C15 11.45 14.8043 10.9793 14.413 10.588C14.021 10.196 13.55 10 13 10C12.45 10 11.9793 10.196 11.588 10.588C11.196 10.9793 11 11.45 11 12C11 12.55 11.196 13.0207 11.588 13.412C11.9793 13.804 12.45 14 13 14Z" fill="black"/>
+                            </g>
+                        </svg>
+                        <span>Mitglieder hinzufügen</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    
+        <div class="btnContainer">
+            <button (click)="leaveChannel()">Channel verlassen</button>
+        </div>
+    }
+
+</section>

@@ -1,0 +1,427 @@
+section {
+      padding: 40px;
+      border-radius: 0px 30px 30px 30px;
+      opacity: 0px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 220px;
+      left: 440px;
+      width: clamp(350px, 37vw, 872px);
+      gap: 20px;  
+    }
+
+
+    .headline {
+     max-width: 792px;
+     width: 100%;
+     height: 40px;
+     gap: 0px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     opacity: 0px;
+     
+     .headlineNameWrapper {
+        display: flex;
+        padding: 2px 1px 2px 1px;
+        gap: 15px;
+        border-radius: 30px;
+        opacity: 0px;
+        >span{
+            display: flex;
+            width: fit-content;
+            height: 33px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32.74px;
+            text-align: left;
+        }
+     }
+     
+     .closeSvgBg{
+         width: 40px;
+         height: 40px;
+         padding: 8px;
+         opacity: 0px;
+         svg:hover {
+             path {
+                 fill: #535AF1;
+             }
+             background-color:#ECEEFE;
+             border-radius: 20px;
+             cursor: pointer;
+            }
+        }
+    }
+
+    .channelNameWrapper {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 20px;
+        opacity: 0px;
+        border: 1px solid #ADB0D9;
+        .channelNameEdit{
+            display: flex;
+            justify-content: space-between;
+            height: 25px;
+            opacity: 0px;
+    
+            >span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;
+                color: black;
+                width: fit-content; 
+            }
+    
+            >p {
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 24.55px;
+                text-align: left;
+                color: #535AF1; 
+                cursor: pointer; 
+            }
+        }
+
+        .channelName {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            padding: 2px 1px 2px 1px;
+            gap: 10px;
+            border-radius: 30px;
+            opacity: 0px;
+            >span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;                
+                color: black; 
+            }
+        }
+    }
+
+    .channelNameInputWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 20px;
+        opacity: 0px;
+        .channelNameEdit{
+            display: flex;
+            justify-content: space-between;
+            height: 25px;
+            opacity: 0px;
+            >span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;
+                color: black;
+                width: fit-content; 
+            }
+    
+            >p {
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 24.55px;
+                text-align: left;
+                color: #535AF1; 
+                cursor: pointer; 
+            }
+        }
+    }
+    
+    .channelInfo {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding: 20px;
+        gap: 30px;
+        border-radius: 20px;
+        opacity: 0px;
+        border: 1px solid #ADB0D9;
+        .channelDescriptionWrapper{
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            gap: 20px;
+            opacity: 0px;
+            
+            .channelDescriptionEdit {
+                display: flex;
+                height: fit-content;
+                gap: 0px;
+                justify-content: space-between;
+                opacity: 0px;
+
+                >span{
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: black;
+                    width: fit-content; 
+                }
+    
+                >p {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: #535AF1; 
+                    cursor: pointer; 
+                }  
+            }
+
+            .channelDescription {
+                height: fit-content;
+                gap: 0px;
+                opacity: 0px;
+
+                >span {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: black;
+                }
+            }
+        }
+
+        >svg {
+            width: 100%;
+        }
+
+        .createdByWrapper{
+            display: flex;
+            flex-direction: column;
+            height: 78px;
+            gap: 20px;
+            opacity: 0px;
+            > span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;                    
+                color: black;
+                width: fit-content; 
+            }
+
+            > p{
+                font-family: Nunito;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 32.74px;
+                text-align: left;
+                color: #535AF1; 
+            }  
+        }
+    }
+
+    .channelInputInfo{
+        display: flex;
+        flex-direction: column;
+        height: 235px;
+        padding: 20px 0px 0px 0px;
+        gap: 30px;
+        border-radius: 20px;
+        opacity: 0px;
+        .channelDescriptionInputWrapper{
+            display: flex;
+            flex-direction: column;
+            height: 95px;
+            gap: 20px;
+            opacity: 0px;
+            
+            .channelDescriptionEdit {
+                display: flex;
+                height: 25px;
+                gap: 0px;
+                justify-content: space-between;
+                opacity: 0px;
+
+                >span{
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: black;
+                    width: fit-content; 
+                }
+    
+                >p {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: #535AF1; 
+                    cursor: pointer; 
+                }  
+            }
+
+            .channelDescription {
+                height: 50px;
+                gap: 0px;
+                opacity: 0px;
+                >span {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 24.55px;
+                    text-align: left;
+                    color: black;
+                }
+            }   
+        }
+
+        >svg {
+            display: flex;
+            width: 100%;
+        }
+
+        .createdByWrapper{
+            display: flex;
+            flex-direction: column;
+            height: 78px;
+            gap: 20px;
+            opacity: 0px;
+            > span{
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;                    
+                color: black;
+                width: fit-content; 
+            }
+
+            > p{
+                font-family: Nunito;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 32.74px;
+                text-align: left;
+                color: #535AF1; 
+            }  
+        }
+    }
+    .btnContainer{
+        display: flex;
+        justify-content: flex-end;
+        button {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            width: 204px;
+            height: 49px;
+            padding: 12px 25px 12px 25px;
+            gap: 10px;
+            border-radius: 25px;
+            border: none;
+            opacity: 0px;
+            background: #444DF2;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+       
+        button:hover {
+            background-color: #797EF3;
+        }
+    }
+
+    .userInput {
+     display: flex;
+     flex-direction: column;
+     height: 65px;
+     padding: 0px 20px 0px 20px;
+     gap: 30px;
+     border-radius: 30px;
+     border: 1px;
+     opacity: 0px;
+     border: 1px solid #ADB0D9;
+     .inputWrapper {
+         display: flex;
+         height: 65px;
+         align-items: center;
+        >span {
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24.55px;
+            text-align: left;
+        }
+
+         >input {
+             display: flex;
+             width: 792px;
+             height: 62px;
+             padding: 0px 20px 0px 20px;
+             gap: 30px;
+             border: none;
+             position: relative;
+             top: 1px;
+             font-family: Nunito;
+             font-size: 18px;
+             font-weight: 400;
+             line-height: 24.55px;
+             text-align: left;
+             cursor: pointer;
+
+             ::placeholder {
+                 display: flex;
+                 width: 792px;
+                 height: 25px;
+                 gap: 20px;
+                 opacity: 0px;
+                 font-family: Nunito;
+                 font-size: 18px;
+                 font-weight: 400;
+                 line-height: 24.55px;
+                 text-align: left;
+                 color: #686868;
+             }
+         }
+     
+         input:focus{
+             outline: none !important;
+         }
+     }
+    
+     >label {
+         font-family: Nunito;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 24.55px;
+         text-align: left;
+         color: red;
+         position: relative;
+         bottom: 27px;
+        
+     }
+    }

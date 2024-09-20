@@ -1,0 +1,288 @@
+
+@media (max-width: 1650px) {
+    section {
+        width: 30vw;
+    }
+}
+
+
+@media (max-width: 1350px) {
+    section {
+        left: 380px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    section {
+        width: clamp(350px, 45vw, 872px);
+    }
+}
+
+
+@media (max-width: 1000px) {
+    section {
+        width: clamp(350px, 40vw, 872px);
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    section {
+        width: 95vw;
+        height: calc(100vh);
+        padding: 40px;
+        border-radius: 0px;
+        opacity: 0px;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: -34px;
+        gap: 37px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    ::ng-deep .cdk-overlay-container{
+        
+        .cdk-global-overlay-wrapper {
+            align-items: flex-end !important;
+        }
+    }
+
+
+    .channelNameWrapper {
+        max-height: 200px;
+        //overflow-y: scroll;
+        overflow-x: scroll;
+    }
+
+    .headline {
+
+        width: 100vw;
+        height: 80px;
+        gap: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0px;
+        padding: 0px 8px 0px 8px;
+        box-shadow: 0px 2px 10px 0px #00000014;
+        position: relative;
+
+
+
+        
+        .headlineNameWrapper {
+           display: flex;
+           padding: 2px 1px 2px 8px;
+           gap: 15px;
+           border-radius: 30px;
+           opacity: 0px;
+
+           >span{
+               display: flex;
+               width: fit-content;
+               height: 33px;
+               gap: 0px;
+               opacity: 0px;
+               font-family: Nunito;
+               font-size: 24px;
+               font-weight: 700;
+               line-height: 32.74px;
+               text-align: left;
+           }
+        }
+        
+        .closeSvgBg{
+            width: 40px;
+            height: 40px;
+            padding: 8px 30px 8px 8px;
+            opacity: 0px;
+            svg:hover {
+                path {
+                    fill: #535AF1;
+                }
+                background-color:#ECEEFE;
+                border-radius: 20px;
+                cursor: pointer;
+               }
+           }
+    }
+
+
+
+
+    .channelNameEdit{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 0px 0px 10px;
+        height: 25px;
+        opacity: 0px;
+    }
+
+
+    .channelName {
+        padding: 2px 1px 2px 10px !important;
+    }
+
+    .channelUser {
+        display: flex;
+        //width: fit-content;
+        height: fit-content;
+        flex-direction: column;
+        padding: 2px 1px 2px 1px;
+        gap: 10px;
+        border-radius: 30px;
+        opacity: 0px;
+        >span{
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;                
+            color: black; 
+        }
+    }
+
+    .channelDescriptionWrapper{
+        .channelDescription {
+
+            padding: 0px 0px 0px 10px;
+        }
+    }
+
+
+    .userlistContainer{
+        width: 215px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+        padding: 0px 20px 20px 5px;
+        gap: 20px;
+        border-radius: 0px 30px 30px 30px;
+        opacity: 0px;
+        overflow: auto;
+        background-color: #FFFFFF;
+            .userList {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: fit-content;
+                padding: 0px 15px 0px 15px;
+                >div {
+                    display: flex;
+                    align-items: center;
+       
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                        gap: 0px;
+                        border-radius: 30px;
+                        opacity: 0px;
+                    }
+                   
+                    >svg{
+                        display: flex;
+                        position: relative;
+                        right: 15px;
+                        top: 18px;
+                    }
+            
+                    span {
+                        display: flex;
+                        position: relative;
+                        width: fit-content;
+                        height: 25px;
+                        gap: 0px;
+                        opacity: 0px;
+                        font-family: Nunito;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24.55px;
+                        text-align: left;
+                    }
+                }
+            }
+    }
+
+    .userlistContainer::-webkit-scrollbar {
+        display: none;
+   }
+       
+    .addMember{
+        display: flex;
+        align-items: center;
+        width: 282px;
+        height: fit-content;
+        padding: 0px 29px 0px 29px;
+        gap: 15px;
+        border-radius: 100px 0px 0px 0px;
+        opacity: 0px;
+        >div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            span {
+                display: flex;
+                position: relative;
+                width: 200px;
+                height: fit-content;
+                padding: 10px 20px 10px 0px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+            }
+        }
+    }
+
+    .channelDescriptionEdit{
+        padding: 0px 0px 0px 10px;
+
+
+    }
+
+    .channelInfo {
+        >svg {
+            width: 85vw;
+        }
+
+        .createdByWrapper{
+            padding: 0px 0px 0px 10px;
+        }
+    }
+
+ 
+
+    .channelInputInfo{
+        >svg {
+            width: 90vw;
+            left: 10px;
+        }
+        
+        .createdByWrapper{
+            padding: 0px 0px 0px 10px;
+        }
+    }
+
+    .btnContainer{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+
+    }
+
+}

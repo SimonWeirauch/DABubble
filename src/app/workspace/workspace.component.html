@@ -1,0 +1,455 @@
+@if(userService.deviceWidth > 850)
+{
+    <div *ngIf="userService.isWorkspaceDataLoaded; else loadingTemplate" #main class="main-chat">
+
+
+        <section>
+            <div class="workspaceHead">
+                <div class="titleContainer">
+                    <img src="../../assets/channel/workspace_logo.png"> 
+                    <span>Devspace</span>
+                </div>
+    
+                <div class="bgContainer" (click)="openNewConversation()">
+                    <!-- svg add conversation-->
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_237_558" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+                        <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_237_558)">
+                        <path d="M13 31.7C12.45 31.7 11.9792 31.5042 11.5875 31.1125C11.1958 30.7208 11 30.25 11 29.7V15.7C11 15.15 11.1958 14.6792 11.5875 14.2875C11.9792 13.8958 12.45 13.7 13 13.7H21.925L19.925 15.7H13V29.7H27V22.75L29 20.75V29.7C29 30.25 28.8042 30.7208 28.4125 31.1125C28.0208 31.5042 27.55 31.7 27 31.7H13ZM24.175 14.275L25.6 15.675L19 22.275V23.7H20.4L27.025 17.075L28.45 18.475L21.825 25.1C21.6417 25.2833 21.4292 25.4292 21.1875 25.5375C20.9458 25.6458 20.6917 25.7 20.425 25.7H18C17.7167 25.7 17.4792 25.6042 17.2875 25.4125C17.0958 25.2208 17 24.9833 17 24.7V22.275C17 22.0083 17.05 21.7542 17.15 21.5125C17.25 21.2708 17.3917 21.0583 17.575 20.875L24.175 14.275ZM28.45 18.475L24.175 14.275L26.675 11.775C27.075 11.375 27.5542 11.175 28.1125 11.175C28.6708 11.175 29.1417 11.375 29.525 11.775L30.925 13.2C31.3083 13.5833 31.5 14.05 31.5 14.6C31.5 15.15 31.3083 15.6167 30.925 16L28.45 18.475Z" fill="black"/>
+                        </g>
+                    </svg>
+                </div>
+            </div> <!--WorkspaceHead-End-->
+    
+    
+            <div class="workspaceBody">
+                <div class="channelListContainer">
+                    <div class="channelHead" >
+                        <div class="channelMenu" (click)="switchVisibilityChannelbody()">
+                            <!-- svg arrow down-->
+                            <svg [ngClass]="{'rotate': hideChannelBody}"  width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10658" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                                <rect width="30" height="30" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10658)">
+                                <path d="M14.1251 17.875L10.8751 14.625C10.4792 14.2292 10.3909 13.7762 10.6101 13.2662C10.8284 12.7554 11.2188 12.5 11.7813 12.5H18.2188C18.7813 12.5 19.1717 12.7554 19.3901 13.2662C19.6092 13.7762 19.5209 14.2292 19.1251 14.625L15.8751 17.875C15.7501 18 15.6147 18.0937 15.4688 18.1562C15.323 18.2187 15.1667 18.25 15.0001 18.25C14.8334 18.25 14.6772 18.2187 14.5313 18.1562C14.3855 18.0937 14.2501 18 14.1251 17.875Z" fill="black"/>
+                                </g>
+                            </svg>
+                            
+                            <div class="channelMenuTitle" >
+                                <!-- svg workspace-->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_54150_10662" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask0_54150_10662)">
+                                    <path d="M6 21C4.9 21 3.95833 20.6083 3.175 19.825C2.39167 19.0417 2 18.1 2 17C2 15.9 2.39167 14.9583 3.175 14.175C3.95833 13.3917 4.9 13 6 13C7.1 13 8.04167 13.3917 8.825 14.175C9.60833 14.9583 10 15.9 10 17C10 18.1 9.60833 19.0417 8.825 19.825C8.04167 20.6083 7.1 21 6 21ZM18 21C16.9 21 15.9583 20.6083 15.175 19.825C14.3917 19.0417 14 18.1 14 17C14 15.9 14.3917 14.9583 15.175 14.175C15.9583 13.3917 16.9 13 18 13C19.1 13 20.0417 13.3917 20.825 14.175C21.6083 14.9583 22 15.9 22 17C22 18.1 21.6083 19.0417 20.825 19.825C20.0417 20.6083 19.1 21 18 21ZM6 19C6.55 19 7.02067 18.8043 7.412 18.413C7.804 18.021 8 17.55 8 17C8 16.45 7.804 15.9793 7.412 15.588C7.02067 15.196 6.55 15 6 15C5.45 15 4.97933 15.196 4.588 15.588C4.196 15.9793 4 16.45 4 17C4 17.55 4.196 18.021 4.588 18.413C4.97933 18.8043 5.45 19 6 19ZM18 19C18.55 19 19.021 18.8043 19.413 18.413C19.8043 18.021 20 17.55 20 17C20 16.45 19.8043 15.9793 19.413 15.588C19.021 15.196 18.55 15 18 15C17.45 15 16.979 15.196 16.587 15.588C16.1957 15.9793 16 16.45 16 17C16 17.55 16.1957 18.021 16.587 18.413C16.979 18.8043 17.45 19 18 19ZM12 11C10.9 11 9.95833 10.6083 9.175 9.825C8.39167 9.04167 8 8.1 8 7C8 5.9 8.39167 4.95833 9.175 4.175C9.95833 3.39167 10.9 3 12 3C13.1 3 14.0417 3.39167 14.825 4.175C15.6083 4.95833 16 5.9 16 7C16 8.1 15.6083 9.04167 14.825 9.825C14.0417 10.6083 13.1 11 12 11ZM12 9C12.55 9 13.021 8.804 13.413 8.412C13.8043 8.02067 14 7.55 14 7C14 6.45 13.8043 5.97933 13.413 5.588C13.021 5.196 12.55 5 12 5C11.45 5 10.9793 5.196 10.588 5.588C10.196 5.97933 10 6.45 10 7C10 7.55 10.196 8.02067 10.588 8.412C10.9793 8.804 11.45 9 12 9Z" fill="black"/>
+                                    </g>
+                                </svg>
+                                
+                                <span>Channels</span>
+                            </div>
+                        </div>
+                        <div class="addNewChannelBg">
+                            <!-- svg addChannel-->
+                            <svg (click)="openCreateChannelDialog()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_54150_10667)">
+                                <mask id="mask0_54150_10667" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10667)">
+                                <path d="M12 19C11.7167 19 11.4793 18.904 11.288 18.712C11.096 18.5207 11 18.2833 11 18V13H6C5.71667 13 5.479 12.904 5.287 12.712C5.09567 12.5207 5 12.2833 5 12C5 11.7167 5.09567 11.479 5.287 11.287C5.479 11.0957 5.71667 11 6 11H11V6C11 5.71667 11.096 5.479 11.288 5.287C11.4793 5.09567 11.7167 5 12 5C12.2833 5 12.521 5.09567 12.713 5.287C12.9043 5.479 13 5.71667 13 6V11H18C18.2833 11 18.5207 11.0957 18.712 11.287C18.904 11.479 19 11.7167 19 12C19 12.2833 18.904 12.5207 18.712 12.712C18.5207 12.904 18.2833 13 18 13H13V18C13 18.2833 12.9043 18.5207 12.713 18.712C12.521 18.904 12.2833 19 12 19Z" fill="black"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_54150_10667">
+                                <rect width="24" height="24" rx="12" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div> <!--ChannelHead-End-->
+    
+                    <!--ChannelBody has to be filled with data from database-->
+                    <div [ngClass]="{'d-none': hideChannelBody}"  class="channelBody">
+                        <button *ngFor="let channel of userService.activeUserChannels" (click)="openChannel(channel)">
+                            <p>#</p>
+                            <span>{{channel.name}}</span>
+                        </button> 
+                    </div> <!--ChannelBody-End-->
+    
+                    <div class="channelFoot" [ngClass]="{'d-none': hideChannelBody}">
+                        <button (click)="openCreateChannelDialog()">
+                            <!-- svg add ChannelCircle-->
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10681" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+                                <rect y="0.5" width="24" height="24" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10681)">
+                                <path d="M12 17.5C12.2833 17.5 12.521 17.404 12.713 17.212C12.9043 17.0207 13 16.7833 13 16.5V13.5H16.025C16.3083 13.5 16.5417 13.404 16.725 13.212C16.9083 13.0207 17 12.7833 17 12.5C17 12.2167 16.904 11.979 16.712 11.787C16.5207 11.5957 16.2833 11.5 16 11.5H13V8.475C13 8.19167 12.9043 7.95833 12.713 7.775C12.521 7.59167 12.2833 7.5 12 7.5C11.7167 7.5 11.4793 7.59567 11.288 7.787C11.096 7.979 11 8.21667 11 8.5V11.5H7.975C7.69167 11.5 7.45833 11.5957 7.275 11.787C7.09167 11.979 7 12.2167 7 12.5C7 12.7833 7.09567 13.0207 7.287 13.212C7.479 13.404 7.71667 13.5 8 13.5H11V16.525C11 16.8083 11.096 17.0417 11.288 17.225C11.4793 17.4083 11.7167 17.5 12 17.5ZM12 22.5C10.6167 22.5 9.31667 22.2373 8.1 21.712C6.88333 21.1873 5.825 20.475 4.925 19.575C4.025 18.675 3.31267 17.6167 2.788 16.4C2.26267 15.1833 2 13.8833 2 12.5C2 11.1167 2.26267 9.81667 2.788 8.6C3.31267 7.38333 4.025 6.325 4.925 5.425C5.825 4.525 6.88333 3.81233 8.1 3.287C9.31667 2.76233 10.6167 2.5 12 2.5C13.3833 2.5 14.6833 2.76233 15.9 3.287C17.1167 3.81233 18.175 4.525 19.075 5.425C19.975 6.325 20.6873 7.38333 21.212 8.6C21.7373 9.81667 22 11.1167 22 12.5C22 13.8833 21.7373 15.1833 21.212 16.4C20.6873 17.6167 19.975 18.675 19.075 19.575C18.175 20.475 17.1167 21.1873 15.9 21.712C14.6833 22.2373 13.3833 22.5 12 22.5ZM12 20.5C14.2167 20.5 16.1043 19.721 17.663 18.163C19.221 16.6043 20 14.7167 20 12.5C20 10.2833 19.221 8.39567 17.663 6.837C16.1043 5.279 14.2167 4.5 12 4.5C9.78333 4.5 7.896 5.279 6.338 6.837C4.77933 8.39567 4 10.2833 4 12.5C4 14.7167 4.77933 16.6043 6.338 18.163C7.896 19.721 9.78333 20.5 12 20.5Z" fill="black"/>
+                                </g>
+                            </svg>
+                            <span>Channel hinzufügen</span>
+                        </button>
+                    </div> <!--ChannelFoot-End-->
+                </div> <!--ChannelListContainer-End-->
+            
+    
+                <div class="conversationListContainer">
+                    <div class="conversationHead">
+                        <div class="conversationMenu" (click)="switchVisibilityConversationbody()">
+                            <!-- svg arrow down-->
+                            <svg [ngClass]="{'rotate': hideConversationBody}"  width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10658" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                                <rect width="30" height="30" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10658)">
+                                <path d="M14.1251 17.875L10.8751 14.625C10.4792 14.2292 10.3909 13.7762 10.6101 13.2662C10.8284 12.7554 11.2188 12.5 11.7813 12.5H18.2188C18.7813 12.5 19.1717 12.7554 19.3901 13.2662C19.6092 13.7762 19.5209 14.2292 19.1251 14.625L15.8751 17.875C15.7501 18 15.6147 18.0937 15.4688 18.1562C15.323 18.2187 15.1667 18.25 15.0001 18.25C14.8334 18.25 14.6772 18.2187 14.5313 18.1562C14.3855 18.0937 14.2501 18 14.1251 17.875Z" fill="black"/>
+                                </g>
+                            </svg>
+    
+                            <div class="conversationMenuTitle" >
+                                <!-- svg account-->
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.85 15.1C4.7 14.45 5.65 13.9373 6.7 13.562C7.75 13.1873 8.85 13 10 13C11.15 13 12.25 13.1873 13.3 13.562C14.35 13.9373 15.3 14.45 16.15 15.1C16.7333 14.4167 17.1877 13.6417 17.513 12.775C17.8377 11.9083 18 10.9833 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 10.9833 2.16267 11.9083 2.488 12.775C2.81267 13.6417 3.26667 14.4167 3.85 15.1ZM10 11C9.01667 11 8.18733 10.6627 7.512 9.988C6.83733 9.31267 6.5 8.48333 6.5 7.5C6.5 6.51667 6.83733 5.68733 7.512 5.012C8.18733 4.33733 9.01667 4 10 4C10.9833 4 11.8127 4.33733 12.488 5.012C13.1627 5.68733 13.5 6.51667 13.5 7.5C13.5 8.48333 13.1627 9.31267 12.488 9.988C11.8127 10.6627 10.9833 11 10 11ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C10.8833 18 11.7167 17.871 12.5 17.613C13.2833 17.3543 14 16.9833 14.65 16.5C14 16.0167 13.2833 15.6457 12.5 15.387C11.7167 15.129 10.8833 15 10 15C9.11667 15 8.28333 15.129 7.5 15.387C6.71667 15.6457 6 16.0167 5.35 16.5C6 16.9833 6.71667 17.3543 7.5 17.613C8.28333 17.871 9.11667 18 10 18ZM10 9C10.4333 9 10.7917 8.85833 11.075 8.575C11.3583 8.29167 11.5 7.93333 11.5 7.5C11.5 7.06667 11.3583 6.70833 11.075 6.425C10.7917 6.14167 10.4333 6 10 6C9.56667 6 9.20833 6.14167 8.925 6.425C8.64167 6.70833 8.5 7.06667 8.5 7.5C8.5 7.93333 8.64167 8.29167 8.925 8.575C9.20833 8.85833 9.56667 9 10 9Z" fill="black"/>
+                                </svg>
+                                <span>Direktnachrichten</span>
+                            </div>
+                        </div>
+                    </div> <!--Conversation Head-End-->
+    
+                    <!--ConversationBody has to be filled with data from database-->
+                    @if(userService.activeUserOwnConversation){
+                        <div [ngClass]="{'d-none': hideConversationBody}" class="conversationBody">
+                            
+                            
+                            <button (click)="openConversation(userService.activeUserOwnConversation)">
+                                <img src="{{userService.activeUserObject.avatarUrl}}" alt="">
+                                <ng-container *ngIf="(userService.activeUserObject.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                <ng-template #onlineIndicatorTemplateHTML>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                    </svg>
+                                </ng-template>
+                                <ng-template #OfflineIndicatorTemplateHTML>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                    </svg>
+                                </ng-template>
+                                <span>{{activeUser.name}} (Du)</span>
+                            </button>
+                            
+
+                                @for (user of userService.usersFromActiveUserConversationList; track  user; let i = $index;){
+                                    
+                                    <button (click)="openConversation(userService.activeUserConversationList[i])">
+                                        <img src="{{user.avatarUrl}}" alt="">
+                                        <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                        <span>{{user.name}}</span>
+                                        
+                                    </button>
+                                }
+                        </div> <!--ChannelBody-End-->
+                    }
+                    @else {
+                        <div [ngClass]="{'d-none': hideConversationBody}" class="conversationBody">
+                                @for (user of userService.usersFromActiveUserConversationList; track  user; let i = $index;){
+                                    <button (click)="openConversation(userService.activeUserConversationList[i])">
+                                        <img src="{{user.avatarUrl}}" alt="">
+                                        <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                        <ng-template #onlineIndicatorTemplateHTML>
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </ng-template>
+                                        <ng-template #OfflineIndicatorTemplateHTML>
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </ng-template>
+                                        
+                                    </button>
+                                }
+                        </div> <!--ChannelBody-End-->
+                    }
+    
+                </div> <!--ConversationListContainer-End-->
+            </div> <!--WorkspaceBody-End-->
+        </section>
+    </div>
+    
+}
+@else {
+    <!--mobile View-->
+        <section *ngIf="userService.isWorkspaceDataLoaded; else loadingTemplate" #main>
+
+            <div class="bgContainer" (click)="openNewConversation()">
+                <!-- svg add conversation-->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_237_558" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="8" width="24" height="24">
+                    <rect x="8" y="8" width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_237_558)">
+                    <path d="M13 31.7C12.45 31.7 11.9792 31.5042 11.5875 31.1125C11.1958 30.7208 11 30.25 11 29.7V15.7C11 15.15 11.1958 14.6792 11.5875 14.2875C11.9792 13.8958 12.45 13.7 13 13.7H21.925L19.925 15.7H13V29.7H27V22.75L29 20.75V29.7C29 30.25 28.8042 30.7208 28.4125 31.1125C28.0208 31.5042 27.55 31.7 27 31.7H13ZM24.175 14.275L25.6 15.675L19 22.275V23.7H20.4L27.025 17.075L28.45 18.475L21.825 25.1C21.6417 25.2833 21.4292 25.4292 21.1875 25.5375C20.9458 25.6458 20.6917 25.7 20.425 25.7H18C17.7167 25.7 17.4792 25.6042 17.2875 25.4125C17.0958 25.2208 17 24.9833 17 24.7V22.275C17 22.0083 17.05 21.7542 17.15 21.5125C17.25 21.2708 17.3917 21.0583 17.575 20.875L24.175 14.275ZM28.45 18.475L24.175 14.275L26.675 11.775C27.075 11.375 27.5542 11.175 28.1125 11.175C28.6708 11.175 29.1417 11.375 29.525 11.775L30.925 13.2C31.3083 13.5833 31.5 14.05 31.5 14.6C31.5 15.15 31.3083 15.6167 30.925 16L28.45 18.475Z" fill="black"/>
+                    </g>
+                </svg>
+            </div>
+            
+            <div class="workspaceHead">
+                <div class="inputDesign">
+                    <input (focus)="detectInputFocus(); changeUserContainerVisibility()" (input)="showFilteredUser()" [(ngModel)]="inputUser" type="text" placeholder="Gehe zu...">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_10480_20395" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                        <rect width="32" height="32" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_10480_20395)">
+                        <path d="M25.2 27.0667L17.7333 19.6C17.0667 20.1333 16.3 20.5556 15.4333 20.8667C14.5667 21.1778 13.6444 21.3333 12.6667 21.3333C10.2444 21.3333 8.19467 20.4947 6.51733 18.8173C4.83911 17.1391 4 15.0889 4 12.6667C4 10.2444 4.83911 8.19422 6.51733 6.516C8.19467 4.83867 10.2444 4 12.6667 4C15.0889 4 17.1391 4.83867 18.8173 6.516C20.4947 8.19422 21.3333 10.2444 21.3333 12.6667C21.3333 13.6444 21.1778 14.5667 20.8667 15.4333C20.5556 16.3 20.1333 17.0667 19.6 17.7333L27.1 25.2333C27.3444 25.4778 27.4667 25.7778 27.4667 26.1333C27.4667 26.4889 27.3333 26.8 27.0667 27.0667C26.8222 27.3111 26.5111 27.4333 26.1333 27.4333C25.7556 27.4333 25.4444 27.3111 25.2 27.0667ZM12.6667 18.6667C14.3333 18.6667 15.7502 18.0836 16.9173 16.9173C18.0836 15.7502 18.6667 14.3333 18.6667 12.6667C18.6667 11 18.0836 9.58311 16.9173 8.416C15.7502 7.24978 14.3333 6.66667 12.6667 6.66667C11 6.66667 9.58311 7.24978 8.416 8.416C7.24978 9.58311 6.66667 11 6.66667 12.6667C6.66667 14.3333 7.24978 15.7502 8.416 16.9173C9.58311 18.0836 11 18.6667 12.6667 18.6667Z" fill="#686868"/>
+                        </g>
+                    </svg>
+                </div>
+
+
+            </div> <!--WorkspaceHead-End-->
+    
+    
+            <div class="workspaceBody">
+                <div class="channelListContainer">
+                    <div class="channelHead" >
+                        <div class="channelMenu" (click)="switchVisibilityChannelbody()">
+                            <!-- svg arrow down-->
+                            <svg [ngClass]="{'rotate': hideChannelBody}"  width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10658" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                                <rect width="30" height="30" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10658)">
+                                <path d="M14.1251 17.875L10.8751 14.625C10.4792 14.2292 10.3909 13.7762 10.6101 13.2662C10.8284 12.7554 11.2188 12.5 11.7813 12.5H18.2188C18.7813 12.5 19.1717 12.7554 19.3901 13.2662C19.6092 13.7762 19.5209 14.2292 19.1251 14.625L15.8751 17.875C15.7501 18 15.6147 18.0937 15.4688 18.1562C15.323 18.2187 15.1667 18.25 15.0001 18.25C14.8334 18.25 14.6772 18.2187 14.5313 18.1562C14.3855 18.0937 14.2501 18 14.1251 17.875Z" fill="black"/>
+                                </g>
+                            </svg>
+                            
+                            <div class="channelMenuTitle" >
+                                <!-- svg workspace-->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_54150_10662" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                    <rect width="24" height="24" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask0_54150_10662)">
+                                    <path d="M6 21C4.9 21 3.95833 20.6083 3.175 19.825C2.39167 19.0417 2 18.1 2 17C2 15.9 2.39167 14.9583 3.175 14.175C3.95833 13.3917 4.9 13 6 13C7.1 13 8.04167 13.3917 8.825 14.175C9.60833 14.9583 10 15.9 10 17C10 18.1 9.60833 19.0417 8.825 19.825C8.04167 20.6083 7.1 21 6 21ZM18 21C16.9 21 15.9583 20.6083 15.175 19.825C14.3917 19.0417 14 18.1 14 17C14 15.9 14.3917 14.9583 15.175 14.175C15.9583 13.3917 16.9 13 18 13C19.1 13 20.0417 13.3917 20.825 14.175C21.6083 14.9583 22 15.9 22 17C22 18.1 21.6083 19.0417 20.825 19.825C20.0417 20.6083 19.1 21 18 21ZM6 19C6.55 19 7.02067 18.8043 7.412 18.413C7.804 18.021 8 17.55 8 17C8 16.45 7.804 15.9793 7.412 15.588C7.02067 15.196 6.55 15 6 15C5.45 15 4.97933 15.196 4.588 15.588C4.196 15.9793 4 16.45 4 17C4 17.55 4.196 18.021 4.588 18.413C4.97933 18.8043 5.45 19 6 19ZM18 19C18.55 19 19.021 18.8043 19.413 18.413C19.8043 18.021 20 17.55 20 17C20 16.45 19.8043 15.9793 19.413 15.588C19.021 15.196 18.55 15 18 15C17.45 15 16.979 15.196 16.587 15.588C16.1957 15.9793 16 16.45 16 17C16 17.55 16.1957 18.021 16.587 18.413C16.979 18.8043 17.45 19 18 19ZM12 11C10.9 11 9.95833 10.6083 9.175 9.825C8.39167 9.04167 8 8.1 8 7C8 5.9 8.39167 4.95833 9.175 4.175C9.95833 3.39167 10.9 3 12 3C13.1 3 14.0417 3.39167 14.825 4.175C15.6083 4.95833 16 5.9 16 7C16 8.1 15.6083 9.04167 14.825 9.825C14.0417 10.6083 13.1 11 12 11ZM12 9C12.55 9 13.021 8.804 13.413 8.412C13.8043 8.02067 14 7.55 14 7C14 6.45 13.8043 5.97933 13.413 5.588C13.021 5.196 12.55 5 12 5C11.45 5 10.9793 5.196 10.588 5.588C10.196 5.97933 10 6.45 10 7C10 7.55 10.196 8.02067 10.588 8.412C10.9793 8.804 11.45 9 12 9Z" fill="black"/>
+                                    </g>
+                                </svg>
+                                
+                                <span>Channels</span>
+                            </div>
+                        </div>
+                        <div class="addNewChannelBg">
+                            <!-- svg addChannel-->
+                            <svg (click)="openCreateChannelDialog()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_54150_10667)">
+                                <mask id="mask0_54150_10667" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <rect width="24" height="24" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10667)">
+                                <path d="M12 19C11.7167 19 11.4793 18.904 11.288 18.712C11.096 18.5207 11 18.2833 11 18V13H6C5.71667 13 5.479 12.904 5.287 12.712C5.09567 12.5207 5 12.2833 5 12C5 11.7167 5.09567 11.479 5.287 11.287C5.479 11.0957 5.71667 11 6 11H11V6C11 5.71667 11.096 5.479 11.288 5.287C11.4793 5.09567 11.7167 5 12 5C12.2833 5 12.521 5.09567 12.713 5.287C12.9043 5.479 13 5.71667 13 6V11H18C18.2833 11 18.5207 11.0957 18.712 11.287C18.904 11.479 19 11.7167 19 12C19 12.2833 18.904 12.5207 18.712 12.712C18.5207 12.904 18.2833 13 18 13H13V18C13 18.2833 12.9043 18.5207 12.713 18.712C12.521 18.904 12.2833 19 12 19Z" fill="black"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_54150_10667">
+                                <rect width="24" height="24" rx="12" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div> <!--ChannelHead-End-->
+    
+                    <!--ChannelBody has to be filled with data from database-->
+                    <div [ngClass]="{'d-none': hideChannelBody}"  class="channelBody">
+                        <button *ngFor="let channel of userService.activeUserChannels" (click)="openChannel(channel)">
+                            <p>#</p>
+                            <span>{{channel.name}}</span>
+                        </button> 
+                    </div> <!--ChannelBody-End-->
+    
+                    <div class="channelFoot" [ngClass]="{'d-none': hideChannelBody}">
+                        <button (click)="openCreateChannelDialog()">
+                            <!-- svg add ChannelCircle-->
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10681" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+                                <rect y="0.5" width="24" height="24" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10681)">
+                                <path d="M12 17.5C12.2833 17.5 12.521 17.404 12.713 17.212C12.9043 17.0207 13 16.7833 13 16.5V13.5H16.025C16.3083 13.5 16.5417 13.404 16.725 13.212C16.9083 13.0207 17 12.7833 17 12.5C17 12.2167 16.904 11.979 16.712 11.787C16.5207 11.5957 16.2833 11.5 16 11.5H13V8.475C13 8.19167 12.9043 7.95833 12.713 7.775C12.521 7.59167 12.2833 7.5 12 7.5C11.7167 7.5 11.4793 7.59567 11.288 7.787C11.096 7.979 11 8.21667 11 8.5V11.5H7.975C7.69167 11.5 7.45833 11.5957 7.275 11.787C7.09167 11.979 7 12.2167 7 12.5C7 12.7833 7.09567 13.0207 7.287 13.212C7.479 13.404 7.71667 13.5 8 13.5H11V16.525C11 16.8083 11.096 17.0417 11.288 17.225C11.4793 17.4083 11.7167 17.5 12 17.5ZM12 22.5C10.6167 22.5 9.31667 22.2373 8.1 21.712C6.88333 21.1873 5.825 20.475 4.925 19.575C4.025 18.675 3.31267 17.6167 2.788 16.4C2.26267 15.1833 2 13.8833 2 12.5C2 11.1167 2.26267 9.81667 2.788 8.6C3.31267 7.38333 4.025 6.325 4.925 5.425C5.825 4.525 6.88333 3.81233 8.1 3.287C9.31667 2.76233 10.6167 2.5 12 2.5C13.3833 2.5 14.6833 2.76233 15.9 3.287C17.1167 3.81233 18.175 4.525 19.075 5.425C19.975 6.325 20.6873 7.38333 21.212 8.6C21.7373 9.81667 22 11.1167 22 12.5C22 13.8833 21.7373 15.1833 21.212 16.4C20.6873 17.6167 19.975 18.675 19.075 19.575C18.175 20.475 17.1167 21.1873 15.9 21.712C14.6833 22.2373 13.3833 22.5 12 22.5ZM12 20.5C14.2167 20.5 16.1043 19.721 17.663 18.163C19.221 16.6043 20 14.7167 20 12.5C20 10.2833 19.221 8.39567 17.663 6.837C16.1043 5.279 14.2167 4.5 12 4.5C9.78333 4.5 7.896 5.279 6.338 6.837C4.77933 8.39567 4 10.2833 4 12.5C4 14.7167 4.77933 16.6043 6.338 18.163C7.896 19.721 9.78333 20.5 12 20.5Z" fill="black"/>
+                                </g>
+                            </svg>
+                            <span>Channel hinzufügen</span>
+                        </button>
+                    </div> <!--ChannelFoot-End-->
+                </div> <!--ChannelListContainer-End-->
+            
+    
+                <div class="conversationListContainer">
+                    <div class="conversationHead">
+                        <div class="conversationMenu" (click)="switchVisibilityConversationbody()">
+                            <!-- svg arrow down-->
+                            <svg [ngClass]="{'rotate': hideConversationBody}"  width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_54150_10658" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                                <rect width="30" height="30" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_54150_10658)">
+                                <path d="M14.1251 17.875L10.8751 14.625C10.4792 14.2292 10.3909 13.7762 10.6101 13.2662C10.8284 12.7554 11.2188 12.5 11.7813 12.5H18.2188C18.7813 12.5 19.1717 12.7554 19.3901 13.2662C19.6092 13.7762 19.5209 14.2292 19.1251 14.625L15.8751 17.875C15.7501 18 15.6147 18.0937 15.4688 18.1562C15.323 18.2187 15.1667 18.25 15.0001 18.25C14.8334 18.25 14.6772 18.2187 14.5313 18.1562C14.3855 18.0937 14.2501 18 14.1251 17.875Z" fill="black"/>
+                                </g>
+                            </svg>
+    
+                            <div class="conversationMenuTitle" >
+                                <!-- svg account-->
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.85 15.1C4.7 14.45 5.65 13.9373 6.7 13.562C7.75 13.1873 8.85 13 10 13C11.15 13 12.25 13.1873 13.3 13.562C14.35 13.9373 15.3 14.45 16.15 15.1C16.7333 14.4167 17.1877 13.6417 17.513 12.775C17.8377 11.9083 18 10.9833 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 10.9833 2.16267 11.9083 2.488 12.775C2.81267 13.6417 3.26667 14.4167 3.85 15.1ZM10 11C9.01667 11 8.18733 10.6627 7.512 9.988C6.83733 9.31267 6.5 8.48333 6.5 7.5C6.5 6.51667 6.83733 5.68733 7.512 5.012C8.18733 4.33733 9.01667 4 10 4C10.9833 4 11.8127 4.33733 12.488 5.012C13.1627 5.68733 13.5 6.51667 13.5 7.5C13.5 8.48333 13.1627 9.31267 12.488 9.988C11.8127 10.6627 10.9833 11 10 11ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C10.8833 18 11.7167 17.871 12.5 17.613C13.2833 17.3543 14 16.9833 14.65 16.5C14 16.0167 13.2833 15.6457 12.5 15.387C11.7167 15.129 10.8833 15 10 15C9.11667 15 8.28333 15.129 7.5 15.387C6.71667 15.6457 6 16.0167 5.35 16.5C6 16.9833 6.71667 17.3543 7.5 17.613C8.28333 17.871 9.11667 18 10 18ZM10 9C10.4333 9 10.7917 8.85833 11.075 8.575C11.3583 8.29167 11.5 7.93333 11.5 7.5C11.5 7.06667 11.3583 6.70833 11.075 6.425C10.7917 6.14167 10.4333 6 10 6C9.56667 6 9.20833 6.14167 8.925 6.425C8.64167 6.70833 8.5 7.06667 8.5 7.5C8.5 7.93333 8.64167 8.29167 8.925 8.575C9.20833 8.85833 9.56667 9 10 9Z" fill="black"/>
+                                </svg>
+                                <span>Direktnachrichten</span>
+                            </div>
+                        </div>
+                    </div> <!--Conversation Head-End-->
+
+
+                    @if(inputUser.startsWith('@') && inputFocused){
+                        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+                            <div *ngFor="let user of foundUserList" class="userList">
+                                <div class="userContainer" (click)="selectUser(user);">
+                                    <img src="{{user.avatarUrl}}">
+                                    <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                    <ng-template #onlineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <ng-template #OfflineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <span>{{user.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @else if(inputUser == '' && inputFocused){
+                        <!--Needed to show nothing when input is empty and not focused-->
+                    }
+                    @else if(inputUser.startsWith('#') && inputFocused) {
+                        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+                            <div *ngFor="let channel of foundChannelList" class="userList" >
+                                <div  class="channelContainer" (click)="selectChannel(channel);">
+                                    <p>#</p>
+                                    <span>{{channel.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @else {
+                        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+                            <div *ngFor="let user of foundUserList" class="userList">
+                                <div class="userContainer" (click)="selectUser(user);">
+                                    <img src="{{user.avatarUrl}}">
+                                    <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                    <ng-template #onlineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <ng-template #OfflineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <span>{{user.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+    
+                    <!--ConversationBody has to be filled with data from database-->
+                    @if(userService.activeUserOwnConversation){
+                        <div [ngClass]="{'d-none': hideConversationBody}" class="conversationBody">
+                            <button (click)="openConversation(userService.activeUserOwnConversation)">
+                                <img src="{{userService.activeUserObject.avatarUrl}}" alt="">
+                                <ng-container *ngIf="(userService.activeUserObject.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                <ng-template #onlineIndicatorTemplateHTML>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                    </svg>
+                                </ng-template>
+                                <ng-template #OfflineIndicatorTemplateHTML>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                    </svg>
+                                </ng-template>
+                                <span>{{activeUser.name}} (Du)</span>
+                            </button>
+                            
+                            @for (user of userService.usersFromActiveUserConversationList; track  user; let i = $index;){
+                                <button (click)="openConversation(userService.activeUserConversationList[i])">
+                                    <img src="{{user.avatarUrl}}" alt="">
+                                    <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                    <ng-template #onlineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <ng-template #OfflineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <span>{{user.name}}</span>
+                                </button>
+                            }
+                        </div> <!--ChannelBody-End-->
+                    }
+                    @else {
+                        <div [ngClass]="{'d-none': hideConversationBody}" class="conversationBody">
+                            @for (user of userService.usersFromActiveUserConversationList; track  user; let i = $index;){
+                                <button (click)="openConversation(userService.activeUserConversationList[i])">
+                                    <img src="{{user.avatarUrl}}" alt="">
+                                    <ng-container *ngIf="(user.status === 'online'); then onlineIndicatorTemplateHTML; else OfflineIndicatorTemplateHTML"></ng-container>
+                                    <ng-template #onlineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <ng-template #OfflineIndicatorTemplateHTML>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="7" cy="7" r="6" fill="#686868" stroke="white" stroke-width="2"/>
+                                        </svg>
+                                    </ng-template>
+                                    <span>{{user.name}}</span>
+                                </button>
+                            }
+                        </div> <!--ChannelBody-End-->
+                    }
+    
+                </div> <!--ConversationListContainer-End-->
+            </div> <!--WorkspaceBody-End-->
+        </section>
+    
+    
+}
+
+
+
+
+
+
+
+<ng-template #loadingTemplate>
+    <div class="lds-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  </ng-template>

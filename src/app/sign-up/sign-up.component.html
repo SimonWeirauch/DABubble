@@ -1,0 +1,82 @@
+<section>
+    <nav>
+        <div class="logoContainer">
+            <img src="../../assets/img/Logo.png" alt="logo">
+        </div>
+    </nav>
+    <div class="mainContainer">
+        <form (ngSubmit)="onSubmit()" [formGroup]="myForm" class="card" data-aos="fade-left">
+            <div class="formHeadline"> 
+                <img [routerLink]="['/']" src="/assets/img/arrow_back.png" alt="arrow_back">
+                <h1>Konto erstellen</h1>
+            </div>
+            <span>Mit deinem Namen und deiner E-Mail-Adresse hast du dein neues DABubble-Konto</span>
+            <div class="loginCt">
+                <input
+                type="name"
+                formControlName="name"
+                (focus)="userIcon.src = '/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png'"
+                (blur)="userIcon.src = '/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png'"
+                placeholder="Name und Nachname" required>
+                <img #userIcon src="/assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                <p
+                *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"
+                class="errorStyle">
+                    Bitte schreiben Sie einen Namen.
+                </p>
+            </div>
+            <div class="loginCt">
+                <input
+                type="email"
+                formControlName="mail"
+                (focus)="img.src = '../../assets/img/mail-focus.png'"
+                (blur)="img.src = '../../assets/img/mail-Icon.png'"
+                placeholder="beispielname&#64;email.com" required>
+                <img #img src="../../assets/img/mail-Icon.png" alt="">
+                <p
+                *ngIf="myForm.get('mail')?.invalid && myForm.get('mail')?.touched"
+                class="errorStyle">
+                    *Diese E-Mail-Adresse is leider ungültig.
+                </p>
+            </div>
+            <div class="loginCt">
+                <input
+                type="password"
+                formControlName="pw"
+                (focus)="lockImg.src = '../../assets/img/lock-focus.png'"
+                (blur)="lockImg.src = '../../assets/img/lock-icon.png'"
+                placeholder="Passwort" required>
+                <img #lockImg src="../../assets/img/lock-icon.png" alt="">
+                <p
+                *ngIf="myForm.get('pw')?.invalid && myForm.get('pw')?.touched"
+                class="errorStyle">
+                    Falsches Passwort. Bitte noch einmal versuchen.
+                </p>
+            </div>
+            <div class="privacyCheckbox">
+                <input formControlName="box" id="cbx" class="inp-cbx" type="checkbox" style="display: none">
+                <label class="cbx" for="cbx">
+                    <span>
+                        <svg width="12px" height="10px" viewBox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg>
+                    </span>
+                </label>
+                
+                <span>Ich stimme der <a [routerLink]="['/privacyPolicy']">Datenschutzerklärung</a> zu.</span>
+            </div>
+            <div class="nextBtn">
+                <button
+                    type="submit"
+                    [ngClass]="{'enabledBtn': myForm.valid, 'disabledBtn': !myForm.valid}"
+                    [disabled]="!myForm.valid">
+                    Weiter
+                </button>
+            </div>
+        </form>
+        <div class="footerCt">
+            <span [routerLink]="['/imprint']">Impressum</span>
+            <span [routerLink]="['/privacyPolicy']">Datenschutz</span>
+        </div>
+    </div>
+</section>

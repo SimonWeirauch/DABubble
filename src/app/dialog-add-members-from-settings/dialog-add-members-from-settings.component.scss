@@ -1,0 +1,488 @@
+section {
+    padding: 40px;
+    border-radius: 30px;
+    opacity: 0px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.headline {
+   width: 830px;
+   height: 40px;
+   gap: 0px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   opacity: 0px;
+   .closeSvgBg{
+       width: 40px;
+       height: 40px;
+       padding: 8px;
+       opacity: 0px;
+       svg:hover {
+           path {
+               fill: #535AF1;
+           }
+           background-color:#ECEEFE;
+           border-radius: 20px;
+           cursor: pointer;
+       }
+   }
+
+
+   >span{
+           display: flex;
+           width: 400px;
+           height: 33px;
+           gap: 0px;
+           opacity: 0px;
+           font-family: Nunito;
+           font-size: 24px;
+           font-weight: 700;
+           line-height: 32.74px;
+           text-align: left;
+       }
+}
+
+.d-none {
+   display: none !important;
+}
+
+.radioButtonGroup{
+   display: flex;
+   width: 630px;
+   height: 70px;
+   gap: 20px;
+   opacity: 0px;
+   .radioButtons{
+       display: flex;
+       flex-direction: column;
+       width: 20px;
+       height: 65px;
+       gap: 25px;
+       opacity: 0px;
+       >input {
+           width: 20px;
+           height: 20px;
+           gap: 0px;
+           opacity: 0px;
+           cursor: pointer;
+       }
+
+       input:hover{
+           border: 1px solid #535AF1;
+       }
+   }
+
+   .labels {
+       display: flex;
+       flex-direction: column;
+       width: fit-content;
+       height: 70px;
+       gap: 20px;
+       opacity: 0px;
+       >span {
+           display: flex;
+           width: 566px;
+           height: 25px;
+           gap: 0px;
+           opacity: 0px;
+           font-family: Nunito;
+           font-size: 18px;
+           font-weight: 400;
+           line-height: 24.55px;
+           text-align: left;
+           >p {
+               color: #535AF1;
+           }
+       }
+       >div {
+           display: flex;
+           flex-wrap: wrap;
+         
+           >span {
+               display: flex;
+               width: fit-content;
+               height: 25px;
+               gap: 0px;
+               opacity: 0px;
+               font-family: Nunito;
+               font-size: 18px;
+               font-weight: 400;
+               line-height: 24.55px;
+               text-align: left;
+
+           }
+
+           >p {
+               color: #535AF1;
+               margin: 0;
+               font-family: Nunito;
+               font-size: 18px;
+               font-weight: 400;
+               line-height: 24.55px;
+               text-align: left;
+           }
+       }
+   }
+}
+
+.userlistContainer{
+   width: 215px;
+   height: 211px;
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   top: 240px;
+   left: 100px;
+   z-index: 99;
+   padding: 40px;
+   gap: 20px;
+   border-radius: 0px 30px 30px 30px;
+   opacity: 0px;
+   border: 1px solid #535AF1;
+   overflow: auto;
+   background-color: #FFFFFF;
+       .userList {
+           display: flex;
+           align-items: center;
+           cursor: pointer;
+           width: fit-content;
+           padding: 0px 15px 0px 15px;
+          
+           >div {
+               display: flex;
+               align-items: center;
+               >img{
+                   width: 50px;
+                   height: 50px;
+                   gap: 0px;
+                   border-radius: 30px;
+                   opacity: 0px;
+               }
+              
+               >svg{
+                   display: flex;
+                   position: relative;
+                   right: 15px;
+                   top: 18px;
+               }
+       
+               span {
+                   display: flex;
+                   position: relative;
+                   width: fit-content;
+                   height: 25px;
+                   gap: 0px;
+                   opacity: 0px;
+                   font-family: Nunito;
+                   font-size: 18px;
+                   font-weight: 400;
+                   line-height: 24.55px;
+                   text-align: left;
+               }
+           }
+       }
+   
+       .userList:hover {
+           background-color: #ECEEFE;
+           border-radius: 20px;
+       }
+}
+
+.userlistContainer::-webkit-scrollbar {
+   display: none;
+}
+
+.userInput {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   gap: 20px;
+   opacity: 0px;
+   display: flex;
+   width: 792px;
+   height: 65px;
+   padding: 0px 20px 0px 20px;
+   gap: 30px;
+   border-radius: 30px;
+   border: 1px;
+   opacity: 0px;
+   border: 1px solid #ADB0D9;
+   cursor: pointer;
+   .inputWrapper {
+       display: flex;
+       height: 65px;
+       
+       .selectedList {
+           display: flex;
+           align-items: center;
+           padding: 0px 15px 0px 15px;
+           .selectedUser{
+               display: flex;
+               align-items: center;
+               background-color: #ECEEFE;
+               border-radius: 20px;
+               width: fit-content;
+               position: relative;
+               right: 20px;
+               margin-right: 10px;
+                     
+               >img{
+                   width: 50px !important;
+                   height: 50px !important;
+                   gap: 0px;
+                   border-radius: 30px;
+                   opacity: 0px;
+               }
+
+               >svg{
+                   display: flex;
+                   position: relative;
+                   right: 15px;
+                   top: 18px;
+               }
+               
+               .close{
+                   display: flex;
+                   position: relative;
+                   right: 0px !important;
+                   top: 0px !important;
+                   svg:hover {
+                       path {
+                           fill: #535AF1;
+                       }
+                       cursor: pointer;
+                   }
+               }
+
+               span {
+                   display: flex;
+                   position: relative;
+                   width: max-content;
+                   height: 25px;
+                   gap: 0px;
+                   opacity: 0px;
+                   font-family: Nunito;
+                   font-size: 18px;
+                   font-weight: 400;
+                   line-height: 24.55px;
+                   text-align: left;
+               }
+           }
+       }
+
+       .selectedListLength{
+           display: flex;
+           width: 30px;
+           >span {
+               position: relative;
+               right: 28px;
+               z-index: 99;
+               height: 25px;
+               gap: 0px;
+               opacity: 0px;
+               font-family: Nunito;
+               font-size: 18px;
+               font-weight: 400;
+               line-height: 24.55px;
+               text-align: left;
+               padding: 5px;
+           }
+
+           >span:hover {
+               background-color:#ECEEFE;
+               border-radius: 20px;
+               
+           }
+       }
+   
+       >input {
+           display: flex;
+           width: 792px;
+           height: 62px;
+           padding: 0px 20px 0px 20px;
+           gap: 30px;
+           border: none;
+           position: relative;
+           top: 1px;
+           right: 30px;
+           font-family: Nunito;
+           font-size: 18px;
+           font-weight: 400;
+           line-height: 24.55px;
+           text-align: left;
+           cursor: pointer;
+           ::placeholder {
+               display: flex;
+               width: 752px;
+               height: 25px;
+               gap: 20px;
+               opacity: 0px;
+               font-family: Nunito;
+               font-size: 18px;
+               font-weight: 400;
+               line-height: 24.55px;
+               text-align: left;
+               color: #686868;
+           }
+       }
+   
+       input:focus{
+           outline: none !important;
+       }
+   }
+}
+
+.errorMessage {
+   font-family: Nunito;
+   height: 0px;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 24.55px;
+   text-align: left;
+   color: red;
+   position: relative;
+   bottom: 18px;
+   left: 24px;
+}
+
+
+.btnContainer{
+   display: flex;
+   justify-content: flex-end;
+   width: 830px;
+   margin-top: 10px;
+   button {
+       cursor: pointer;
+       display: flex;
+       justify-content: center;
+       width: 125px;
+       height: 49px;
+       padding: 12px 25px 12px 25px;
+       gap: 10px;
+       border-radius: 25px;
+       opacity: 0px;
+       background: #444DF2;
+       border: none;
+       font-family: Nunito;
+       font-size: 18px;
+       font-weight: 700;
+       line-height: 24.55px;
+       text-align: left;
+       color: #FFFFFF;
+   }
+
+   button:hover {
+       background-color: #797EF3;
+   }
+}
+
+
+
+
+
+
+@media (max-width: 850px) {
+    
+    ::ng-deep .cdk-overlay-container{
+        
+        .cdk-global-overlay-wrapper {
+            align-items: flex-end !important;
+        }
+    }
+    
+    section {
+        width: calc(100vw - 40px);
+        padding: 40px 20px 40px 20px;
+        border-radius: 30px 30px 0px 0px;
+        opacity: 0px;
+        gap: 25px;
+        position: relative;
+        right: 85px;
+
+        >svg {
+            width: 100%;
+            padding: 0px 10px 0px 10px;
+            gap: 10px;
+        }
+    }
+
+    .headline {
+        width: 100%;
+        height: fit-content;
+        gap: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0px;
+
+        >span{
+            width: fit-content;
+        }
+    }
+
+    .radioButtonGroup{
+        width: fit-content;
+        height: fit-content;
+        .radioButtons{
+            height: fit-content;
+        }
+        
+        .labels {
+            height: fit-content;
+            >span {
+                width: fit-content;
+                height: fit-content;
+            }
+        }
+    }
+
+
+    .userlistContainer{
+        width: fit-content;
+        height: 120px;
+        position: absolute;
+        top: 190px;
+        left: 25px;
+        padding: 10px;
+    }
+
+
+    .userInput {
+        width: calc(100% - 40px);
+    }
+
+    .btnContainer{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    section {
+        right: 40px;
+    }
+}
+
+
+
+@media (max-width: 438px) {
+    .radioButtonGroup{
+
+        .radioButtons {
+            height: 90px;
+            gap: 50px;
+        }
+    }
+}
+
+
+@media (max-width: 380px) {
+    section {
+        right: 37px;
+    }
+}

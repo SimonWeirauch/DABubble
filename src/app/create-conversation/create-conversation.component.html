@@ -1,0 +1,105 @@
+
+<div *ngIf="isdataLoaded; else loadingTemplate" #main class="main-chat" 
+[ngClass]="{'channelSmaller': channelSizeSmaller, 
+            'channelSmal': channelSizeSmall,
+            'channelBig': channelSizeBig,
+            'channelBigger': channelSizeBigger,}">
+    
+    
+    <div class="main-chat-header">
+        <div class="channelname">
+            <span>Neue Nachricht</span>
+        </div>
+        @if(us.deviceWidth > 850) {
+            <input (focus)="detectInputFocus(); changeUserContainerVisibility()" (input)="showFilteredUser()" [(ngModel)]="inputUser" type="text" placeholder="An: #channel oder @jemand oder E-Mail Adresse">
+        }
+        @else {
+            <input (focus)="detectInputFocus(); changeUserContainerVisibility()" (input)="showFilteredUser()" [(ngModel)]="inputUser" type="text" placeholder="An: #channel oder @jemand">
+
+        }
+    </div> 
+    
+    <!--main-chat-header END-->
+
+    <div class="chat-area">
+        
+        
+           
+    </div>   <!-- END OF channelmessages -->
+    
+
+    <div class="message-container-orientation">
+        <div class="message-container">
+            <textarea disabled class="message-input" placeholder='Deine Nachricht'></textarea>
+            <div class="message-actions">
+        
+            <div class="action-left">
+                <button class="action-button"> <img src="../../assets/img/add_icon.png" alt=""></button>
+                <div class="line"></div>
+                <button class="action-button"><img src="../../assets/img/emoticon_icon.png" alt=""></button>
+                <button class="action-button"><img src="../../assets/img/mention_icon.png" alt=""></button>
+            </div>
+        
+            <div class="action-right">
+                <button class="action-button"> <img src="../../assets/img/send_icon.png" alt=""></button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    @if(inputUser.startsWith('@') && inputFocused){
+        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+            <div *ngFor="let user of foundUserList" class="userList">
+                <div class="userContainer" (click)="selectUser(user);">
+                    <img src="{{user.avatarUrl}}">
+                    <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <span>{{user.name}}</span>
+                </div>
+            </div>
+        </div>
+    }
+    @else if(inputUser == '' && inputFocused){
+        <!--Needed to show nothing when input is empty and not focused-->
+    }
+    @else if(inputUser.startsWith('#') && inputFocused) {
+        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+            <div *ngFor="let channel of foundChannelList" class="userList" >
+                <div  class="channelContainer" (click)="selectChannel(channel);">
+                    <p>#</p>
+                    <span>{{channel.name}}</span>
+                </div>
+            </div>
+        </div>
+    }
+    @else {
+        <div class="userlistContainer" [ngClass]="{'d-none': hideUserContainer}">
+            <div *ngFor="let user of foundUserList" class="userList">
+                <div class="userContainer" (click)="selectUser(user);">
+                    <img src="{{user.avatarUrl}}">
+                    <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" fill="#92C83E" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <span>{{user.name}}</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+<ng-template #loadingTemplate>
+    <div class="lds-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  </ng-template>

@@ -1,0 +1,55 @@
+<section>
+    <nav>
+        <div class="logoContainer">
+            <img src="../../assets/img/Logo.png" alt="logo">
+        </div>
+    </nav>
+    <div class="mainContainer">
+        <div class="card" data-aos="fade-left">
+            <div class="formHeadline"> 
+                <img [routerLink]="['/signUp']" src="/assets/img/arrow_back.png" alt="arrow_back">
+                <h1>Wähle deinen Avatar</h1>
+            </div>
+            <div
+                [ngStyle]="{'background-image': selectedAvatar ? 'url(' + selectedAvatar + ')' : 'url(/assets/img/unUsedDefault.png)'}"
+                (click)="triggerFileUpload(fileInput)"
+                class="avatarImageCt">
+            </div>
+            <h2>{{ us.userCache.name }}</h2>
+            <span class="avatarListHeadline">Aus der Liste wählen</span>
+            <div class="allAvatars">
+                <div class="avatarCt"
+                *ngFor="let item of images"
+                (click)="selectDummyAvatar(item)"
+                [ngStyle]="{'background-image': 'url(' + item + ')'}"
+                #avatarCt>
+                </div>
+            </div>
+            <div class="uploadCt">
+                <span>eigenes Bild verwenden</span>
+                <input id="fileInput" type="file" accept="image/*" (change)="selectFile($event)" #fileInput />
+                
+                <ng-container *ngIf="us.deviceMobileWidth < 850; then mobileUpload else desktopUpload"></ng-container>
+                <ng-template #mobileUpload>
+                    <button (click)="triggerFileUpload(fileInput)" class="secondaryBtn">Upload</button>
+                </ng-template>
+                <ng-template #desktopUpload>
+                    <button (click)="triggerFileUpload(fileInput)" class="secondaryBtn">Datei hochladen</button>
+                </ng-template>
+            </div>
+            <div class="createUserBtnCt">
+                <button (click)="createUser()" class="primaryBtn">Konto erstellen</button>
+            </div>
+        </div>
+        <div
+        [ngClass]="{bubbleVisible: userCreated}"
+        class="feedbackBubble">
+            <span>Konto erfolgreich erstellt</span>
+        </div>
+    
+        <div class="footerCt">
+            <span [routerLink]="['/imprint']">Impressum</span>
+            <span [routerLink]="['/privacyPolicy']">Datenschutz</span>
+        </div>
+    </div>
+</section>

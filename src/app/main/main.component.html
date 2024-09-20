@@ -1,0 +1,267 @@
+
+@if(userservice.deviceWidth < 850){
+        <!--HTML for mobile view-->
+        <section>
+
+            <app-header
+             (showWorkspace)="viewWorkspace()"
+             (search)="onSearch($event)"
+             (openOwnConversation)="changeConversation($event)"
+             [isWSVisible]="isWSVisible"
+            >
+            </app-header>
+     
+             @if(isWSVisible){
+                 <app-workspace
+                     (changeToChannel)="changeChannel($event)"
+                     (changeToConversation)="changeConversation($event)"
+                     (changeToNewConversation)="changeNewConversation()"
+                     [activeUserChannels]="userservice.activeUserChannels"
+                     [activeUser]="userservice.activeUserObject"
+                     [usersFromActiveUserConversationList]="userservice.usersFromActiveUserConversationList"
+                     [activeUserConversationList]="userservice.activeUserConversationList"
+                 ></app-workspace>
+             }
+             @else {
+                 @if(conversation){
+                     <app-chat
+                     (changeReloadStatus)="setReloadToFalse($event)"
+                     (emitThread)="openThread($event)"
+                     [specific]="currentConversation"
+                     [user]="userservice.activeUserObject"
+                     [reload]="reloadChat"
+                     [filterQuery]="searchQuery"
+                     ></app-chat>
+                 }
+                 @else if(channel) {
+                     <app-channel
+                         (changeReloadStatus)="setReloadToFalse($event)"
+                         (userLeftChannel)="userLeftChannel()"
+                         (emitThread)="openChannelThread($event)"
+                         (openConversation)="changeConversation($event)"
+                         [activeUser]="userservice.activeUserObject"
+                         [channel]="currentChannel"
+                         [reload]="reloadChannel"
+                         [filterQuery]="searchQuery"
+                     ></app-channel>
+                 }
+                 @else if(thread){
+                    <app-thread
+                    [user]="userservice.activeUserObject"
+                    [currentThread]="currentThread"
+                    [currentChannelThread]="currentChannelThread"
+                    [channelThread]="channelThread"
+                    [specific]="currentConversation"
+                    [currentChannel]="currentChannel"
+                    (emitCloseThread)="closeThread()"
+                    (emitReloadChannel)="setChannelReloadToTrue()"
+                    (emitReloadChat)="setChatReloadToTrue($event)"
+                    (emitReloadToFalse)="setReloadToFalse($event)"
+                    >
+                    </app-thread>
+                 }
+                 @else {
+                     <app-create-conversation
+                         (changeToChannel)="changeChannel($event)"
+                         (changeToConversation)="changeConversation($event)"
+                     ></app-create-conversation>
+                 }
+                
+             }
+         </section>
+}
+
+@else if(userservice.deviceWidth < 1200){
+
+            <!--HTML for small view-->
+            <section>
+
+                <div class="closeWorkspace" (click)="changeWSVisibility()">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="16" height="16" rx="1" stroke="black" stroke-width="2"/>
+                        <path d="M13.7142 7.99997V24" stroke="black" stroke-width="2"/>
+                        <path d="M19.4285 18.2857L17.4964 16.3535C17.3011 16.1583 17.3011 15.8417 17.4964 15.6464L19.4285 13.7143" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Workspace-Menü-schließen</span>
+                </div>
+            
+                <app-header 
+                    (search)="onSearch($event)"
+                    (openOwnConversation)="changeConversation($event)"
+                ></app-header>
+         
+                @if(isWSVisible){
+                    <app-workspace
+                    (changeToChannel)="changeChannel($event)"
+                    (changeToConversation)="changeConversation($event)"
+                    (changeToNewConversation)="changeNewConversation()"
+                    [activeUserChannels]="userservice.activeUserChannels"
+                    [activeUser]="userservice.activeUserObject"
+                    [usersFromActiveUserConversationList]="userservice.usersFromActiveUserConversationList"
+                    [activeUserConversationList]="userservice.activeUserConversationList"
+                ></app-workspace>
+                }
+
+                 
+                 
+                @if(conversation){
+                    <app-chat
+                    (changeReloadStatus)="setReloadToFalse($event)"
+                    (emitThread)="openThread($event)"
+                    [specific]="currentConversation"
+                    [user]="userservice.activeUserObject"
+                    [reload]="reloadChat"
+                    [filterQuery]="searchQuery"
+                    [channelSizeSmaller]="channelSizeSmaller"
+                    [channelSizeSmall]="channelSizeSmall"
+                    [channelSizeBig]="channelSizeBig"
+                    [channelSizeBigger]="channelSizeBigger"
+                    ></app-chat>
+                }
+                @else if(channel) {
+                    <app-channel
+                        (changeReloadStatus)="setReloadToFalse($event)"
+                        (userLeftChannel)="userLeftChannel()"
+                        (emitThread)="openChannelThread($event)"
+                        (openConversation)="changeConversation($event)"
+                        [activeUser]="userservice.activeUserObject"
+                        [channel]="currentChannel"
+                        [reload]="reloadChannel"
+                        [filterQuery]="searchQuery"
+                        [channelSizeSmaller]="channelSizeSmaller"
+                        [channelSizeSmall]="channelSizeSmall"
+                        [channelSizeBig]="channelSizeBig"
+                        [channelSizeBigger]="channelSizeBigger"
+                    ></app-channel>
+                }
+                @else if(thread) {
+                    <app-thread
+                        [user]="userservice.activeUserObject"
+                        [currentThread]="currentThread"
+                        [currentChannelThread]="currentChannelThread"
+                        [channelThread]="channelThread"
+                        [specific]="currentConversation"
+                        [currentChannel]="currentChannel"
+                        [channelSizeSmaller]="channelSizeSmaller"
+                        [channelSizeSmall]="channelSizeSmall"
+                        [channelSizeBig]="channelSizeBig"
+                        [channelSizeBigger]="channelSizeBigger"
+                        (emitCloseThread)="closeThread()"
+                        (emitReloadChannel)="setChannelReloadToTrue()"
+                        (emitReloadChat)="setChatReloadToTrue($event)"
+                        (emitReloadToFalse)="setReloadToFalse($event)"
+                    >
+                    </app-thread>
+                }
+                @else {
+                    <app-create-conversation
+                        [channelSizeSmaller]="channelSizeSmaller"
+                        [channelSizeSmall]="channelSizeSmall"
+                        [channelSizeBig]="channelSizeBig"
+                        [channelSizeBigger]="channelSizeBigger"
+                        (changeToChannel)="changeChannel($event)"
+                        (changeToConversation)="changeConversation($event)"
+                    ></app-create-conversation>
+                }
+             </section>
+}
+@else {
+        <!--HTML for desktop view-->
+        <section>
+            <div class="closeWorkspace" (click)="changeWSVisibility()">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="8" width="16" height="16" rx="1" stroke="black" stroke-width="2"/>
+                    <path d="M13.7142 7.99997V24" stroke="black" stroke-width="2"/>
+                    <path d="M19.4285 18.2857L17.4964 16.3535C17.3011 16.1583 17.3011 15.8417 17.4964 15.6464L19.4285 13.7143" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Workspace-Menü-schließen</span>
+            </div>
+        
+            <app-header 
+                (search)="onSearch($event)"
+                (openOwnConversation)="changeConversation($event)"
+            ></app-header>
+        
+            @if(isWSVisible){
+                <app-workspace
+                (changeToChannel)="changeChannel($event)"
+                (changeToConversation)="changeConversation($event)"
+                (changeToNewConversation)="changeNewConversation()"
+                [activeUserChannels]="userservice.activeUserChannels"
+                [activeUser]="userservice.activeUserObject"
+                [usersFromActiveUserConversationList]="userservice.usersFromActiveUserConversationList"
+                [activeUserConversationList]="userservice.activeUserConversationList"
+                ></app-workspace>
+            }
+            
+            
+            @if(conversation){
+                <app-chat
+                (changeReloadStatus)="setReloadToFalse($event)"
+                (emitThread)="openThread($event)"
+                [specific]="currentConversation"
+                [user]="userservice.activeUserObject"
+                [reload]="reloadChat"
+                [filterQuery]="searchQuery"
+                [channelSizeSmaller]="channelSizeSmaller"
+                [channelSizeSmall]="channelSizeSmall"
+                [channelSizeBig]="channelSizeBig"
+                [channelSizeBigger]="channelSizeBigger"
+                ></app-chat>
+            }
+            @else if(channel) {
+                <app-channel
+                    (changeReloadStatus)="setReloadToFalse($event)"
+                    (userLeftChannel)="userLeftChannel()"
+                    (openConversation)="changeConversation($event)"
+                    (emitThread)="openChannelThread($event)"
+                    [activeUser]="userservice.activeUserObject"
+                    [channel]="currentChannel"
+                    [reload]="reloadChannel"
+                    [filterQuery]="searchQuery"
+
+                    [channelSizeSmaller]="channelSizeSmaller"
+                    [channelSizeSmall]="channelSizeSmall"
+                    [channelSizeBig]="channelSizeBig"
+                    [channelSizeBigger]="channelSizeBigger"
+                ></app-channel>
+            }
+            @else {
+                <app-create-conversation
+                [channelSizeSmaller]="channelSizeSmaller"
+                [channelSizeSmall]="channelSizeSmall"
+                [channelSizeBig]="channelSizeBig"
+                [channelSizeBigger]="channelSizeBigger"
+                
+                (changeToChannel)="changeChannel($event)"
+                (changeToConversation)="changeConversation($event)"
+                ></app-create-conversation>
+            }
+    
+            @if(thread){
+                <app-thread
+                [user]="userservice.activeUserObject"
+                [currentThread]="currentThread"
+                [currentChannelThread]="currentChannelThread"
+                [currentChannel]="currentChannel"
+                [channelThread]="channelThread"
+                [specific]="currentConversation"
+                [channelSizeSmaller]="channelSizeSmaller"
+                [channelSizeSmall]="channelSizeSmall"
+                [channelSizeBig]="channelSizeBig"
+                [channelSizeBigger]="channelSizeBigger"
+                (emitCloseThread)="closeThread()"
+                (emitReloadChannel)="setChannelReloadToTrue()"
+                (emitReloadChat)="setChatReloadToTrue($event)"
+                (emitReloadToFalse)="setReloadToFalse($event)"
+                >
+                </app-thread>
+            }
+        </section>
+    
+    
+    
+
+}
+
+

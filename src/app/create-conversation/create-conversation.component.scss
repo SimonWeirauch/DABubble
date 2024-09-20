@@ -1,0 +1,413 @@
+@import url(../app.component.scss);
+
+.main-chat {
+    height: 85vh;
+    width: 51vw;
+    min-width: 430px;
+    max-width: 95vw;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+
+}
+
+.main-chat-header {
+    height: 108px;
+    padding: 32px 45px 20px 45px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 2px 10px 0px #00000014;
+
+
+    input {
+        cursor: pointer;
+        height: 55px;
+        padding: 15px 20px 15px 20px;
+        gap: 10px;
+        border-radius: 30px;
+        opacity: 0px;
+        border: 1px solid #ADB0D9;
+        ::placeholder {
+            height: 25px;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.55px;
+            text-align: left;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.channelname {
+    display: flex;
+    align-items: center;
+
+    span {
+        font-family: Nunito;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.74px;
+        text-align: left;
+    }
+}
+
+
+
+.message-container-orientation{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+
+.chat-area {
+    height: 43vh;
+    overflow-y: scroll;
+    //box-shadow: 0px -5px 0px 0px #00000014;
+}
+
+
+.message-container {
+    width: 100%;
+    max-width: 85%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 145px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ADB0D9;
+}
+
+.message-input {
+    border: none;
+    resize: none;
+    height: 100%;
+    background-color: white;
+
+    font-family: Nunito;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 24.55px;
+    text-align: left;
+}
+
+.message-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 40px;
+}
+
+.action-left {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    color: #007BFF;
+}
+
+.action-right {
+    display: flex;
+    align-items: center;
+}
+
+.line{
+    border: 1px solid #ADB0D9
+}
+
+
+
+.channelSmaller {
+    width: 51vw !important;
+}
+
+.channelSmal {
+    width: 66vw !important;
+}
+
+.channelBig {
+    width: 77vw !important;
+}
+
+
+.channelBigger {
+    width: 95vw !important;
+}
+
+
+// Scrollbar
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+    /* Hintergrund der Scrollbar */
+}
+
+:hover::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Leicht sichtbarer Hintergrund beim Hover */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(105, 105, 105, 0.6);
+    /* Dunkelgraue Scrollbar mit Transparenz */
+    border-radius: 10px;
+    /* Abgerundete Enden */
+    border: 3px solid transparent;
+    /* Abstand zum Rand */
+    background-clip: padding-box;
+    /* Vermeidung von Überlappung */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(105, 105, 105, 1);
+    /* Vollständig sichtbar beim Hover */
+}
+
+
+.d-none {
+    display: none !important;
+}
+   
+   
+.userlistContainer{
+    width: 300px;
+    height: 211px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 150px;
+    left: 80px;
+    z-index: 99;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 0px 30px 30px 30px;
+    opacity: 0px;
+    border: 1px solid #535AF1;
+    overflow: auto;
+    background-color: #FFFFFF;
+        .userList {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: fit-content;
+            padding: 0px 15px 0px 15px;
+            
+            .channelContainer {
+                display: flex;
+
+                >p {
+                    margin: 0 10px 0 0;
+                }
+            }
+            
+            >div {
+                display: flex;
+                align-items: center;
+                >img{
+                    width: 50px;
+                    height: 50px;
+                    gap: 0px;
+                    border-radius: 30px;
+                    opacity: 0px;
+                }
+               
+                >svg{
+                    display: flex;
+                    position: relative;
+                    right: 15px;
+                    top: 18px;
+                }
+        
+                span {
+                    display: flex;
+                    position: relative;
+                    width: fit-content;
+                    height: 25px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 24.55px;
+                    text-align: left;
+                }
+            }
+        }
+    
+        .userList:hover {
+            background-color: #ECEEFE;
+            border-radius: 20px;
+        }
+    
+}
+
+   
+.userlistContainer::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media (min-width: 1920px) {   
+    .channelBig {
+        max-width: 1500px  !important;
+    }
+    
+    
+    .channelBigger {
+        max-width: 1920px !important;
+    }
+}
+
+
+@media (max-width: 1800px) {
+    .channelBig {
+        width: 75vw !important;
+    }
+}
+
+@media (max-width: 1620px) {
+    .channelBig {
+        width: 73vw !important;
+    }
+}
+
+@media (max-width: 1450px) {
+
+    .channelBig {
+        width: 73vw !important;
+    }
+}
+
+@media (max-width: 1350px) {
+        .main-chat {
+            width: 38.5vw;
+            min-width: 460px;
+        }
+
+        .channelBig {
+            width: 70vw !important;
+        }
+}
+
+@media (max-width: 1200px) {
+        .main-chat {
+            width: 65vw !important;
+        }
+
+        .channelBig {
+            width: unset;
+        }
+
+        .channelBigger {
+            width: 95vw !important;
+        }
+        
+}
+    
+@media (max-width: 1100px) {
+        .main-chat {
+            width: 61vw !important;
+        }
+
+        .channelBigger {
+            width: 95vw !important;
+        }
+}
+    
+@media (max-width: 1000px) {
+        .main-chat {
+            width: 57vw !important;
+        }
+
+        .channelBigger {
+            width: 95vw !important;
+        }
+}
+    
+@media (max-width: 900px) {
+        .main-chat {
+            width: 53vw !important;
+        }
+
+        .channelBigger {
+            width: 95vw !important;
+        }
+}
+
+
+
+
+
+@media (max-width: 850px) {
+        .main-chat {
+            height: calc(100vh - 80px);
+            width: 100vw !important;
+            background-color: white;
+            border-radius: 0px;
+            position: relative;
+            min-width: 100vw;
+
+}
+
+
+        .main-chat-header {
+                height: 97px;
+                padding: 20px 16px 7px 16px;
+                input {
+                    padding: 13px 20px 13px 20px;
+                }
+        }
+
+        .message-container-orientation{
+                display: flex;
+                position: absolute;
+                margin-top: 0px;
+                bottom: 30px;
+                left: 5%;
+                width: 85%;
+        }
+
+
+
+        .message-container {
+                height: 103px;
+            
+        }
+
+
+        .userlistContainer{
+                height: 211px;
+                position: absolute;
+                top: 117px;
+                width: 65%;
+                left: 5%;
+                z-index: 99;
+                .userList {
+                    padding: 0px;
+                }
+        }
+
+
+
+
+    }
+
+

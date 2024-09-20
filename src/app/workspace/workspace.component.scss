@@ -1,0 +1,420 @@
+@import url(../app.component.scss);
+
+section {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    width: 20vw; 
+
+    min-width: 270px;
+    max-width: 306px;
+    height: 78.5vh;
+    padding: 32px 30px 32px 30px;
+    gap: 25px;
+    border-radius: 30px;
+    opacity: 0px;
+    background-color: white;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.rotate {
+    rotate: -90deg !important;
+}
+
+.workspaceHead {
+    display: flex;
+    justify-content: space-between;
+    width: 306px;
+    height: 60px;
+    gap: 0px;
+    border-radius: 30px;
+    opacity: 0px;
+    .titleContainer{
+        display: flex;
+        align-items: center;
+        width: 250px;
+        height: 60px;
+        padding: 0px 20px 0px 0px;
+        gap: 15px;
+        opacity: 0px;
+
+        >img {
+            width: 60px;
+            height: 60px;
+            gap: 0px;
+            border-radius: 30px;
+            opacity: 0px;
+            object-fit: cover;
+        }
+
+        >span{
+           display: flex;
+            width: 155px;
+            height: 33px;
+            gap: 10px;
+            opacity: 0px;
+            font-family: Nunito;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32.74px;
+            text-align: left;
+        }
+    }
+
+    .bgContainer{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        padding: 8px 0px 0px 0px;
+        gap: 10px;
+        opacity: 0px;
+        svg:hover {   
+            path {
+                fill: #535AF1;
+            }
+            cursor: pointer;
+            border-radius: 20px;
+            background-color:#ECEEFE;
+        }
+    }
+}
+
+.workspaceBody{
+    display: flex;
+    flex-direction: column;
+    width: 306px;
+    height: 671px;
+    gap: 25px;
+    opacity: 0px;
+}
+
+//Following classes are part of workspace body
+.channelListContainer{
+    width: 306px;
+    height: fit-content;
+    gap: 25px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .channelHead {
+        display: flex;
+        justify-content: space-between;
+        width: 306px;
+        height: 46px;
+        padding: 3px 0px 3px 0px;
+        gap: 0px;
+        opacity: 0px;
+        .channelMenu:hover{
+            svg {   
+                path {
+                    fill: #535AF1;
+                }
+            }
+
+            .channelMenuTitle{
+                span {
+                    color: #535AF1;
+                }
+            }
+        }
+
+        .channelMenu{
+            display: flex;
+            width: 176px;
+            height: 40px;
+            padding: 5px 10px 5px 0px;
+            gap: 15px;
+            border-radius: 15px 0px 0px 0px;
+            opacity: 0px;
+            cursor: pointer;
+            .channelMenuTitle{
+                display: flex;
+                width: 121px;
+                height: 27px;
+                gap: 10px;
+                opacity: 0px;
+                >svg{
+                    width: 24px;
+                    height: 24px;
+                }
+
+                >span{
+                    width: 87px;
+                    height: 27px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 27.28px;
+                    text-align: left; 
+                }
+            }
+        }
+
+        .addNewChannelBg{
+            display: flex;
+            width: 30px;
+            height: 30px;
+            padding: 3px 0px 0px 0px;
+            gap: 10px;
+            border-radius: 30px 0px 0px 0px;
+            opacity: 0px;
+            background-color: transparent;
+            svg:hover{
+                cursor: pointer;
+                path {
+                    fill: #535AF1;
+                }
+                border-radius: 12px;
+                background-color:#ECEEFE;
+            }
+        }
+    }
+
+    
+    //channelBody important because of loaded Data.
+    .channelBody {
+        display: flex;
+        flex-direction: column;
+        width: 306px;
+        height: 120px;
+        overflow: scroll;
+        gap: 13px;
+        opacity: 0px;
+        >button {
+            display: flex;
+            position: relative;
+            left: 25px;
+            align-items: center;
+            width: fit-content;
+            height: 33px;
+            padding: 4px 20px 4px 20px;
+            gap: 10px;
+            border-radius: 20px;
+            opacity: 0px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            >p{
+                width: 17.11px;
+                height: 16.65px;
+                position: relative;
+                display: flex;
+                gap: 0px;
+                opacity: 0px;
+                font-size: 24px;
+            }
+            >span{
+                display: flex;
+                width: fit-content;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+            }
+        }
+        button:hover {
+            background: #ECEEFE;
+            p {
+                color: #535AF1
+            }
+        }
+    }
+
+    .channelBody::-webkit-scrollbar {
+        display: none;
+    }
+
+    .channelFoot{
+        display: flex;
+        width: 306px;
+        height: 33px;
+        gap: 13px;
+        border-radius: 30px;
+        opacity: 0px;
+        >button{
+            display: flex;
+            position: relative;
+            left: 25px;
+            align-items: center;
+            width: 240px;
+            height: 33px;
+            padding: 4px 20px 4px 15px;
+            gap: 10px;
+            opacity: 0px;
+            border-radius: 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            >span{
+                display: flex;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+            }
+        }
+
+        button:hover {
+            svg{
+                cursor: pointer;
+                path {
+                    fill: #535AF1;
+                }
+                border-radius: 12px;
+            }
+            span {
+                color: #535AF1;
+            }
+        }
+    }
+}
+
+.conversationListContainer{
+    width: 306px;
+    height: fit-content;
+    gap: 25px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .conversationHead {
+        display: flex;
+        justify-content: space-between;
+        width: 306px;
+        height: 46px;
+        padding: 3px 0px 3px 0px;
+        gap: 0px;
+        opacity: 0px;
+
+        .conversationMenu{
+            display: flex;
+            width: 176px;
+            height: 40px;
+            padding: 5px 10px 5px 0px;
+            gap: 10px;
+            border-radius: 15px 0px 0px 0px;
+            opacity: 0px;
+            cursor: pointer;
+            .conversationMenuTitle{
+                display: flex;
+                width: 121px;
+                height: 27px;
+                gap: 10px;
+                opacity: 0px;
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+
+                >span{
+                    width: 87px;
+                    height: 27px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 27.28px;
+                    text-align: left; 
+                }
+            }
+        }
+
+        .conversationMenu:hover{
+            svg {   
+                path {
+                    fill: #535AF1;
+                }
+            }
+
+            .conversationMenuTitle{
+                span {
+                    color: #535AF1;
+                }
+            }
+        }
+    }
+
+        //conversationBody important because of loaded Data.
+        .conversationBody {
+            display: flex;
+            flex-direction: column;
+            width: 306px;
+            height: 280px;
+            overflow: scroll;
+            gap: 13px;
+            opacity: 0px;
+            >button {
+                display: flex;
+                position: relative;
+                left: 20px;
+                align-items: center;
+                width: fit-content;
+                height: fit-content;
+                padding: 4px 20px 4px 20px;
+                gap: 10px;
+                border-radius: 30px;
+                opacity: 0px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                >img{
+                    width: 50px;
+                    height: 50px;
+                    gap: 0px;
+                    border-radius: 30px;
+                    opacity: 0px;
+                    object-fit: cover;
+                }
+                >svg{
+                    display: flex;
+                    position: relative;
+                    right: 25px;
+                    top: 18px;
+                }
+            
+                >span{
+                    display: flex;
+                    position: relative;
+                    right: 15px;
+                    width: fit-content;
+                    height: 25px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 24.55px;
+                    text-align: left;
+                }
+            }
+    
+            button:hover {
+                background: #ECEEFE;
+                p {
+                    color: #535AF1
+                }
+            }
+        }
+
+        .conversationBody::-webkit-scrollbar {
+            display: none;
+        }
+    
+}
+

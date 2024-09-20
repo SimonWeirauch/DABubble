@@ -1,0 +1,226 @@
+section {
+    width: 420px;
+    height: 625px;
+    padding: 40px;
+    gap: 45px;
+    border-radius: 30px;
+    opacity: 0px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+
+    .headline {
+        width: fit-content;
+        height: 40px;
+        gap: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0px;
+        .closeSvgBg{
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            opacity: 0px;
+            svg:hover {
+                path {
+                    fill: #535AF1;
+                }
+                background-color:#ECEEFE;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        }
+
+        >span{
+               display: flex;
+               width: 400px;
+               height: 33px;
+               gap: 0px;
+               opacity: 0px;
+               font-family: Nunito;
+               font-size: 24px;
+               font-weight: 700;
+               line-height: 32.74px;
+               text-align: left;
+        }
+    }
+    
+    .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 420px;
+            >img {
+                display: flex;
+                width: 200px;
+                height: 200px;
+                gap: 20px;
+                border-radius: 500px;
+                opacity: 0px;
+            }
+    }
+
+        
+    .userNameContainer {
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            height: 86px;
+            gap: 15px;
+            opacity: 0px;
+            span {
+                display: flex;
+                position: relative;
+                width: fit-content;
+                height: 44px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 43.65px;
+                text-align: left;
+            }
+
+            >div {
+                display: flex;
+                align-items: center;
+                width: 78px;
+                height: 27px;
+                gap: 15px;
+                opacity: 0px;
+                
+                span {
+                    display: flex;
+                    position: relative;
+                    width: fit-content;
+                    width: 47px;
+                    height: 27px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 27.28px;
+                    text-align: left;
+                }
+        }
+    }
+
+
+    .userMailContainer {
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            height: 70px;
+            gap: 15px;
+            opacity: 0px;
+            >div {
+                display: flex;
+                align-items: center;
+                width: 195px;
+                height: 30px;
+                gap: 20px;
+                opacity: 0px;
+
+                span {
+                    display: flex;
+                    width: 195px;
+                    height: 27px;
+                    gap: 0px;
+                    opacity: 0px;
+                    font-family: Nunito;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 27.28px;
+                    text-align: left;
+                    color: black !important;
+                    padding: 0px !important;
+                }
+            }
+           
+            span {
+                display: flex;
+                width: 260px;
+                height: 25px;
+                gap: 10px;
+                opacity: 0px;
+                padding: 0px 10px 0px 50px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 24.55px;
+                text-align: left;
+                color: #1381FF;
+            }
+    }
+  
+
+    .sendMessage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        gap: 15px;
+        opacity: 0px;
+        >button {
+            display: flex;
+            align-items: center;
+            width: 164px;
+            height: 49px;
+            padding: 12px 25px 12px 25px;
+            gap: 10px;
+            border-radius: 50px;
+            opacity: 0px;
+            border: transparent !important;
+            background-color: #444DF2;
+            
+            span {
+                display: flex;
+                width: 80px;
+                height: 25px;
+                gap: 0px;
+                opacity: 0px;
+                font-family: Nunito;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 24.55px;
+                text-align: left;  
+                color: white;              
+            }
+        }
+
+        >button:hover{
+            cursor: pointer;
+            background-color: #535AF1;
+        }
+    }  
+
+
+    @media (max-width: 850px) {
+        ::ng-deep .cdk-overlay-container{
+            .cdk-global-overlay-wrapper {
+                justify-content: flex-start !important;
+            }
+        }
+        
+        section {
+            width: calc(100vw - 40px);
+            padding: 30px 20px 30px 20px;
+            position: relative;
+            top: 0vw;
+        }
+
+
+        .headline {
+            width: 100%;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+    }
