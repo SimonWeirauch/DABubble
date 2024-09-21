@@ -14,7 +14,7 @@ export class User {
         this.status = obj ? obj.status : 'offline';
         this.avatarUrl = obj ? obj.avatarUrl : '/da-bubble/assets/img/unUsedDefault.png';
         this.userId = obj ? obj.userId : '';
-        this.logIn = obj && obj.logIn || 'https://bubble.ishakates.com/';
+        this.logIn = obj && obj.logIn || 'https://simon-weirauch.de/da-bubble';
         this.usedLastTwoEmojis = obj && obj.usedLastTwoEmojis ? obj.usedLastTwoEmojis : ['✅', '🙌'];
         this.uid = obj ? obj.uid : null;
     }

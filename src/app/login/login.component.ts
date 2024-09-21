@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     status: 'offline',
     avatarUrl: '/da-bubble/assets/img/unUsedDefault.png',
     userId: '',
-    logIn: 'https://bubble.ishakates.com/',
+    logIn: 'https://simon-weirauch.de/da-bubble',
     usedLastTwoEmojis: ['✅', '🙌'],
     uid: null
   });

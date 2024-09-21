@@ -23,7 +23,7 @@ import { NavigationStart, Router } from '@angular/router';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
-export class MainComponent implements OnInit{
+export class MainComponent{
   authService = inject(AuthService);
   conversation: boolean = false;
   channel: boolean = false;
@@ -57,7 +57,7 @@ export class MainComponent implements OnInit{
       if(event instanceof NavigationStart){
         if(event.navigationTrigger === "popstate"){
           if(event.url == '/main'){
-            window.location.href = "https://bubble.ishakates.com"
+            window.location.href = "https://simon-weirauch.de/da-bubble"
           }
         }
       }
@@ -65,9 +65,7 @@ export class MainComponent implements OnInit{
   }
 
 
-  ngOnInit(): void {
-    // this.authService.checkActiveUser();
-  }
+
 
 
   /**

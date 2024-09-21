@@ -31,7 +31,7 @@ export class DialogPasswordResetComponent {
 
 
   post = {
-    endPoint: 'https://bubble.ishakates.com/sendPwResetlink.php',
+    endPoint: 'https://simon-weirauch.de/da-bubble/sendPwResetlink.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
