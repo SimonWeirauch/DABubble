@@ -109,27 +109,67 @@ export class AuthService {
   }
 
 
-  /**
-   * get Data from Google and create a new User
-   * @param user user information received by google
-   */
-  async handleUserAfterGoogleLogin(user: any) {
-    const userDoc = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
 
-    if (!userDoc) {
-        this.us.userCache = new User();
-        this.us.userCache.email = user.email;
-        this.us.userCache.name = user.displayName;
-        this.us.userCache.avatarUrl = user.photoURL;
-        this.us.userToken = user.uid
-        // Save user object to Firestore
-        this.us.createAndSaveUser();
-        const getUserAgain = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
-        this.logGoogleUser(this.us.userCache);
-    } else {
-        this.logGoogleUser(userDoc);
+
+  async handleUserAfterGoogleLogin(user: any) {
+    try {
+      let userDoc = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
+  
+      if (!userDoc) {
+      // Create new user
+      this.us.userCache = new User({
+        email: user.email,
+        name: user.displayName,
+        avatarUrl: user.photoURL,
+        uid: user.uid,
+        status: 'online',
+        userId: '', // This will be set after adding to Firestore
+      });
+
+      // Save user to Firestore and get the new document
+      await this.us.createAndSaveUser();
+      userDoc = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
+
+      if (!userDoc) {
+        throw new Error('Failed to create new user');
+      }
     }
-}
+        // Ensure user is logged in
+        await this.firebaseAuth.updateCurrentUser(user);
+
+        // Log in the user
+        this.logGoogleUser(userDoc);
+      } catch (error) {
+        // console.error('Error in handleUserAfterGoogleLogin:', error);
+      }
+    }
+
+/**
+ * Login with user that was created with google auth
+
+
+
+//   /**
+//    * get Data from Google and create a new User
+//    * @param user user information received by google
+//    */
+//   async handleUserAfterGoogleLogin(user: any) {
+//     const userDoc = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
+
+//     if (!userDoc) {
+//         this.us.userCache = new User();
+//         this.us.userCache.email = user.email;
+//         this.us.userCache.name = user.displayName;
+//         this.us.userCache.avatarUrl = user.photoURL;
+//         this.us.userToken = user.uid
+//         // Save user object to Firestore
+//         this.us.createAndSaveUser();
+//         const getUserAgain = await this.us.getUserAfterGoogleAuth(user.email!, user.uid);
+//         this.logGoogleUser(this.us.userCache);
+//     } else {
+//         this.logGoogleUser(userDoc);
+//     }
+// }
 
 
 /**
